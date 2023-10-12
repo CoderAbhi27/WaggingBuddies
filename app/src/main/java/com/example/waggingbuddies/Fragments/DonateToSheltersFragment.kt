@@ -1,13 +1,16 @@
 package com.example.waggingbuddies.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.waggingbuddies.R
 import com.example.waggingbuddies.ViewModels.RetrofitShelter.RetrofitInstanceShelter
 import com.example.waggingbuddies.ViewModels.RetrofitShelter.ShelterViewModel
 import com.example.waggingbuddies.databinding.FragmentDonateToSheltersBinding
@@ -48,6 +51,14 @@ class DonateToSheltersFragment : Fragment() {
    //     binding.loadingCardAllevents.visibility = View.VISIBLE
 
         getEvents()
+
+
+        binding.fab.setOnClickListener {
+
+            val fragmentTransaction : FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.frame, ShelterRegistrationFragment())
+            fragmentTransaction.commit()
+        }
 
     }
 

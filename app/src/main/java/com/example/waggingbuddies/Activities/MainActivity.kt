@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
+
     }
 
     private fun replaceFragment(fragment: Fragment) {

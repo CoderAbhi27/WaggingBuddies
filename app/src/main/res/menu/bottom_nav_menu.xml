@@ -4,17 +4,17 @@
     <item
         android:id="@+id/adoptAPet"
         android:title=""
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/adoptpet"/>
     <item
         android:id="@+id/donateToShelters"
         android:title=""
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/donate"/>
     <item
         android:id="@+id/registerYourPet"
         android:title=""
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/registerpet"/>
     <item
         android:id="@+id/contactVeterinary"
         android:title=""
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/vet"/>
 </menu>

@@ -8,10 +8,12 @@ data class PetsDataClass (
     val petAge: Int,
     val petBreed: String,
     val petOwnersName: String,
+    val petOwnerEmail: String,
     val petHealth: Int,
     val petAdoptionDays: Int,
     val petAddress: Int,
     val petImageURL: String,
     val adoptionTime: Long,
-    val adoptionMsg: String
+    val adoptionMsg: String,
+    val gender: Boolean
 )

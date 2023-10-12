@@ -16,8 +16,6 @@ import com.example.waggingbuddies.R
 
 class ShelterDonationAdapter: RecyclerView.Adapter<ShelterDonationAdapter.MyViewHolder>() {
 
-
-
         private var ShelterList = mutableListOf<ShelterDataClass>()
 
 
