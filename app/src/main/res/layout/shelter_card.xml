@@ -64,11 +64,13 @@
                 android:layout_weight="1"
                 android:text="Dogs: "/>
             <TextView
+                android:id="@+id/dogCapacity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Capacity - 100"/>
             <TextView
+                android:id="@+id/dogStrength"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

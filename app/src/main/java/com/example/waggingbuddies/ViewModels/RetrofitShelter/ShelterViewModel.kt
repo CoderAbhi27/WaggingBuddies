@@ -3,12 +3,14 @@ package com.example.waggingbuddies.ViewModels.RetrofitShelter
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.waggingbuddies.DataClass.PetsDataClass
+import com.example.waggingbuddies.DataClass.ShelterDataClass
 import retrofit2.Response
 
 class ShelterViewModel(application: Application): AndroidViewModel(application) {
-    var ShelterList = MutableLiveData<List<PetsDataClass>?>()
+    var ShelterList = MutableLiveData<List<ShelterDataClass>?>()
     private val retrofit: RetrofitInstanceShelter = RetrofitInstanceShelter() // Initialize Retrofit here
     private val context = getApplication<Application>().applicationContext
 
@@ -16,7 +18,7 @@ class ShelterViewModel(application: Application): AndroidViewModel(application) 
     {
         Log.i("Data", "Function Called")
         try {
-            val response: Response<List<PetsDataClass>> = retrofit.shelterApiService.getShelter()
+            val response: Response<List<ShelterDataClass>> = retrofit.shelterApiService.getShelter()
             if (response.isSuccessful) {
                 val data = response.body()
                 if (data != null) {
