@@ -1,4 +1,4 @@
-package com.example.waggingbuddies.Fragments
+package com.example.waggingbuddies.RegisterYrPet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.waggingbuddies.R
 
-class AdoptAPetFragment : Fragment(R.layout.fragment_adopt_a_pet) {
-    // TODO: Rename and change types of parameters
+
+class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class AdoptAPetFragment : Fragment(R.layout.fragment_adopt_a_pet) {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adopt_a_pet, container, false)
+        return inflater.inflate(R.layout.fragment_register_your_pet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,5 +28,4 @@ class AdoptAPetFragment : Fragment(R.layout.fragment_adopt_a_pet) {
         //write your code here
 
     }
-
 }

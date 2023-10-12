@@ -1,6 +1,5 @@
-package com.example.waggingbuddies.ViewModels.RetrofitShelter
+package com.example.waggingbuddies.DonateToShelter.retrofit
 
-import com.example.waggingbuddies.DataClass.PetsDataClass
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import retrofit2.Response
 import retrofit2.http.GET

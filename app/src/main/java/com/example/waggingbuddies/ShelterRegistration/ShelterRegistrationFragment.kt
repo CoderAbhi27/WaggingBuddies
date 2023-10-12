@@ -1,16 +1,13 @@
-package com.example.waggingbuddies.Fragments
+package com.example.waggingbuddies.ShelterRegistration
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import com.example.waggingbuddies.R
-import com.example.waggingbuddies.databinding.FragmentDonateToSheltersBinding
-import com.example.waggingbuddies.databinding.FragmentRegisterYourPetBinding
 import com.example.waggingbuddies.databinding.FragmentShelterRegistrationBinding
 
 

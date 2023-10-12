@@ -1,4 +1,4 @@
-package com.example.waggingbuddies.ViewModels.RetrofitShelter
+package com.example.waggingbuddies.DonateToShelter.retrofit
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

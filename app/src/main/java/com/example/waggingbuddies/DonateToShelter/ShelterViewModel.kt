@@ -1,12 +1,11 @@
-package com.example.waggingbuddies.ViewModels.RetrofitShelter
+package com.example.waggingbuddies.DonateToShelter
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.waggingbuddies.DataClass.PetsDataClass
 import com.example.waggingbuddies.DataClass.ShelterDataClass
+import com.example.waggingbuddies.DonateToShelter.retrofit.RetrofitInstanceShelter
 import retrofit2.Response
 
 class ShelterViewModel(application: Application): AndroidViewModel(application) {
@@ -23,7 +22,7 @@ class ShelterViewModel(application: Application): AndroidViewModel(application) 
                 val data = response.body()
                 if (data != null) {
                     // Data fetched successfully
-                  Log.d("Data", data.toString())
+                    Log.d("Data", data.toString())
                     ShelterList.postValue(data)
 
 

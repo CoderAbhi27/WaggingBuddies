@@ -1,4 +1,4 @@
-package com.example.waggingbuddies.Fragments
+package com.example.waggingbuddies.DonateToShelter
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -10,7 +10,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.example.waggingbuddies.DataClass.PetsDataClass
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import com.example.waggingbuddies.R
 
