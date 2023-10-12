@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="12dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:elevation="4dp"
+        android:padding="16dp"
+        tools:context=".ShelterDetailsActivity">
+
+        <!-- Shelter Name -->
+        <TextView
+            android:id="@+id/textShelterName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Shelter Name"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <!-- Shelter Location -->
+        <TextView
+            android:id="@+id/textShelterLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Location: "
+            app:layout_constraintTop_toBottomOf="@id/textShelterName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <!-- Dog Details -->
+        <LinearLayout
+            android:id="@+id/DogDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@id/textShelterLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dogs: "/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Capacity - 100"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strength - 85"/>
+
+
+        </LinearLayout>
+
+        <!-- Cat Details -->
+        <LinearLayout
+            android:id="@+id/CatDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/DogDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="cats: "/>
+            <TextView
+                android:id="@+id/catsCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Capacity - 100"/>
+            <TextView
+                android:id="@+id/catsStrength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strength - 85"/>
+
+        </LinearLayout>
+
+        <!-- Cow Details -->
+        <LinearLayout
+            android:id="@+id/CowDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cows: Capacity - 20, Strength - 15"
+            app:layout_constraintTop_toBottomOf="@id/CatDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cows: "/>
+            <TextView
+                android:id="@+id/cowsCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Capacity - 100"/>
+            <TextView
+                android:id="@+id/cowsStrength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strength - 85"/>
+
+        </LinearLayout>
+
+        <!-- Bird Details -->
+        <LinearLayout
+            android:id="@+id/BirdDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Birds: Capacity - 30, Strength - 25"
+            app:layout_constraintTop_toBottomOf="@id/CowDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Birds: "/>
+            <TextView
+                android:id="@+id/birdsCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Capacity - 100"/>
+            <TextView
+                android:id="@+id/birdsStrength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strength - 85"/>
+
+        </LinearLayout>
+
+        <!-- Total Donations -->
+        <TextView
+            android:id="@+id/textTotalDonations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Total Donations: $5000"
+            app:layout_constraintTop_toBottomOf="@id/BirdDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <!-- Donate Button -->
+        <Button
+            android:id="@+id/btnDonate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Donate"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textTotalDonations" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

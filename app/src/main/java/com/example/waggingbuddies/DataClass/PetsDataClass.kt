@@ -1,5 +1,7 @@
 package com.example.waggingbuddies.DataClass
 
+import android.media.Image
+
 data class PetsDataClass (
     val petType: String,
     val petName: String,
