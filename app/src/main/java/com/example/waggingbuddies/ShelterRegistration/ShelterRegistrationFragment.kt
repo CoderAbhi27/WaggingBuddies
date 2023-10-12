@@ -1,14 +1,20 @@
 package com.example.waggingbuddies.ShelterRegistration
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.waggingbuddies.DataClass.ShelterDataClass
+import com.example.waggingbuddies.DonateToShelter.retrofit.RetrofitInstanceShelter
 import com.example.waggingbuddies.R
+import com.example.waggingbuddies.ShelterRegistration.retrofit.ApiResponse
+import com.example.waggingbuddies.ShelterRegistration.retrofit.RetrofitInstancePostShelter
 import com.example.waggingbuddies.databinding.FragmentShelterRegistrationBinding
+import retrofit2.Call
+import retrofit2.Response
 
 
 class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registration) {
@@ -150,7 +156,42 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
     }
 
 
-    private fun pushData(data: ShelterDataClass) {
+    fun pushData(data: ShelterDataClass) {
 
+
+        Log.i("dataModel",data.toString())
+        val call = RetrofitInstancePostShelter().shelterPostApiService.uplaodData(data)
+        call.enqueue(object : retrofit2.Callback<ApiResponse>{
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+
+
+
+                Log.i("Tag", response.toString())
+
+                Log.i("response", response.body()?.msg.toString())
+                if (response.body() == null) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Something went wrong!" + response.code().toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                }
+                else
+                    Toast.makeText(
+                        requireContext(),
+                        "Member is Successfully Registered!!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+
+            }
+
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                Log.i("Tag",t.toString())
+
+                Toast.makeText(requireContext(),"Try again !!, It may happen first time",Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
