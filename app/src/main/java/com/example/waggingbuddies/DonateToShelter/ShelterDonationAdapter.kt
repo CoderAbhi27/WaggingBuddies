@@ -64,7 +64,7 @@ class ShelterDonationAdapter: RecyclerView.Adapter<ShelterDonationAdapter.MyView
             val obj = ShelterList[position]
             obj.let {
                     shelter ->
-holder.shelterName.text = shelter.name
+                holder.shelterName.text = shelter.name
                 holder.shelterLocation.text = shelter.address
 
                 val stages : List<Int> = shelter.totalCapacity
@@ -78,7 +78,7 @@ holder.shelterName.text = shelter.name
                 if (stages[3] == 0)
                     holder.birdLayout.visibility = View.GONE
 
-holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
+                holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
                 holder.dogCapacity.text= "Capacity: ${stages[0]}"
                 holder.dogStrength.text="Strength: ${str[0]}"
                 holder.catCapacity.text= "Capacity: ${stages[1]}"
@@ -88,6 +88,9 @@ holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
                 holder.birdCapacity.text= "Capacity: ${stages[3]}"
                 holder.birdStrenth.text="Strength: ${str[3]}"
 
+                holder.btnDonate.setOnClickListener {
+
+                }
 
 
 

@@ -1,5 +1,7 @@
 package com.example.waggingbuddies.ShelterRegistration
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import com.example.waggingbuddies.DonateToShelter.retrofit.RetrofitInstanceShelter
 import com.example.waggingbuddies.R
@@ -88,6 +91,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
         }
 
         binding.submitBtn.setOnClickListener {
+
             if(binding.editShelterName.text.isEmpty()){
                 Toast.makeText(context, "Please Enter the Shelter name", Toast.LENGTH_SHORT).show()
             }
@@ -145,7 +149,17 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                     0
                 )
 
-                pushData(data)
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("Terms and Conditions")
+                builder.setMessage(getString(R.string.tnc_shelter))
+                builder.setPositiveButton("ACCEPT", DialogInterface.OnClickListener{ dialog, which->
+                    pushData(data)
+                })
+                builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which->
+
+                })
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.show()
 
 
             }
@@ -153,6 +167,10 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
 
 
         }
+    }
+
+    private fun submit() {
+        TODO("Not yet implemented")
     }
 
 
