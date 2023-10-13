@@ -5,8 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#EDEDED"
-    tools:context=".Fragments.RegisterYourPetFragment">
+    android:backgroundTint="#EDEDED">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -299,8 +298,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/lll"
                         android:layout_marginTop="15dp"
-                        android:textSize="18sp"
-                        android:background="@drawable/buttonregister"/>
+                        android:textSize="18sp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/image"
