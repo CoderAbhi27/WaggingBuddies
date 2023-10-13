@@ -19,10 +19,10 @@ class ShelterDonationAdapter: RecyclerView.Adapter<ShelterDonationAdapter.MyView
 
 
         @SuppressLint("NotifyDataSetChanged")
-        fun seteventList(shelterList: MutableLiveData<List<ShelterDataClass>?>){
+        fun setShelterList(shelterList: MutableLiveData<List<ShelterDataClass>?>){
             try {
                 this.ShelterList = shelterList.value!!.toMutableList()
-                Log.d("tag","eventList --> ${this.ShelterList}")
+                Log.d("tag","shelterList --> ${this.ShelterList}")
                 notifyDataSetChanged()
                 Log.d("tag","notified the data set changed")
             }

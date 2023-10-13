@@ -1,32 +1,70 @@
 package com.example.waggingbuddies.AdoptPet
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.waggingbuddies.R
+import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.waggingbuddies.AdoptPet.retrofit.RetrofitInstancePet
+import com.example.waggingbuddies.databinding.FragmentAdoptAPetBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class AdoptAPetFragment : Fragment(R.layout.fragment_adopt_a_pet) {
+class AdoptAPetFragment : Fragment() {
     // TODO: Rename and change types of parameters
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val itemAdapter = AdoptAPetAdapter()
+    private lateinit var viewModel: PetViewModel
+    lateinit var retrofitInstance : RetrofitInstancePet
+    private lateinit var binding : FragmentAdoptAPetBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adopt_a_pet, container, false)
+    ): View
+    {
+        binding = FragmentAdoptAPetBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        retrofitInstance = RetrofitInstancePet()
+        viewModel = ViewModelProvider(this)[PetViewModel::class.java]
 
-        //write your code here
+
+        binding.rvPets.layoutManager = LinearLayoutManager(requireContext())
+
+        // itemAdapter = AllEventsAdapter()
+
+        binding.rvPets.adapter = itemAdapter
+        binding.rvPets.setHasFixedSize(true)
+        // itemdapter.notifyDataSetChanged()
+        //     binding.loadingCardAllevents.visibility = View.VISIBLE
+
+        getPets()
+
+
 
     }
+
+    private fun getPets() {
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            delay(2000)
+            this.launch(Dispatchers.Main) {
+                //  binding.loadingCardAllevents.visibility = View.GONE
+                itemAdapter.setPetList(viewModel.PetList)
+                Log.i("Data",viewModel.PetList.toString())
+            }
+        }
+    }
+
+
 
 }
