@@ -94,8 +94,8 @@
                             android:id="@+id/type"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="305dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="28dp"
                             android:background="@drawable/rounded_edittext"
                             android:hint="My Buddy is a..."
                             app:layout_constraintEnd_toEndOf="parent"
@@ -294,6 +294,18 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.661" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.148"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.664"
+                            app:srcCompat="@drawable/baseline_health_and_safety_24" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
