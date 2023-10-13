@@ -102,9 +102,9 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                 Toast.makeText(context, "Please select at least 1 pet category", Toast.LENGTH_SHORT).show()
             }
             else{
-                val capacityList = arrayListOf<Int>(4)
-                val currList = arrayListOf<Int>(4)
-                for(i in 0..4) {capacityList[i]=0; currList[i]=0;}
+                val capacityList = arrayListOf<Int>(0,0,0,0)
+                val currList = arrayListOf<Int>(0,0,0,0)
+//                for(i in 0..3) {capacityList[i]=0; currList[i]=0;}
                 if(binding.checkDogs.isChecked){
                     if(binding.editCapacityDogs.text.isEmpty()) {
                         Toast.makeText(context, "Please Enter the Shelter address", Toast.LENGTH_SHORT).show()
@@ -151,7 +151,8 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
 
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Terms and Conditions")
-                builder.setMessage(getString(R.string.tnc_shelter))
+//                builder.setMessage(getString(R.string.tnc_shelter))
+                builder.setMessage("ahschsansna")
                 builder.setPositiveButton("ACCEPT", DialogInterface.OnClickListener{ dialog, which->
                     pushData(data)
                 })
