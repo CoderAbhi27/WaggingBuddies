@@ -59,4 +59,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.7.2")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
     implementation ("com.squareup.okhttp3:okhttp:4.11.0")
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")  // Replace with the latest version
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")  // Replace with the latest version
+    implementation ("androidx.room:room-ktx:2.3.0")  // Replace with the latest version
+    implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")  // Replace with the latest version
+
 }
