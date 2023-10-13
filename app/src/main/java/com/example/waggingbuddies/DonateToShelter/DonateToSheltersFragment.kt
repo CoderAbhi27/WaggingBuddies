@@ -53,7 +53,6 @@ class DonateToSheltersFragment : Fragment() {
 
 
         binding.fab.setOnClickListener {
-
             val fragmentTransaction : FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.frame, ShelterRegistrationFragment())
             fragmentTransaction.commit()
