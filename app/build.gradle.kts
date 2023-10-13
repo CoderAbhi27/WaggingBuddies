@@ -69,4 +69,6 @@ dependencies {
 
     implementation ("com.squareup.picasso:picasso:2.8")
 
+    implementation ("com.google.android.gms:play-services-wallet:19.2.1")
+
 }

@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 
 class DonateToSheltersFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private val itemAdapter = ShelterDonationAdapter()
+    private lateinit var itemAdapter :  ShelterDonationAdapter
     private lateinit var viewModel: ShelterViewModel
     lateinit var retrofitInstance : RetrofitInstanceShelter
     private lateinit var binding : FragmentDonateToSheltersBinding
@@ -44,10 +44,12 @@ class DonateToSheltersFragment : Fragment() {
 
         // itemAdapter = AllEventsAdapter()
 
+        itemAdapter = ShelterDonationAdapter(requireContext())
         binding.rvShelter.adapter = itemAdapter
         binding.rvShelter.setHasFixedSize(true)
         // itemdapter.notifyDataSetChanged()
    //     binding.loadingCardAllevents.visibility = View.VISIBLE
+
 
         getShelters()
 

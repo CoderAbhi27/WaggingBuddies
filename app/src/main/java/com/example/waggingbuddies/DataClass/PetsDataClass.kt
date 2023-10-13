@@ -11,7 +11,7 @@ data class PetsDataClass (
     val petOwnerEmail: String,
     val petHealth: Int,
     val petAdoptionDays: Int,
-    val petAddress: Int,
+    val petAddress: String,
     val petImageURL: String,
     val adoptionTime: Long,
     val adoptionMsg: String,
