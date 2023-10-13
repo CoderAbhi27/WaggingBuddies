@@ -81,7 +81,7 @@
                             android:background="@drawable/rounded_edittext"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Buddy's Name"
-                            android:inputType="textPassword"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -94,8 +94,8 @@
                             android:id="@+id/type"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="305dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="28dp"
                             android:background="@drawable/rounded_edittext"
                             android:hint="My Buddy is a..."
                             app:layout_constraintEnd_toEndOf="parent"
@@ -110,38 +110,49 @@
                                 android:inputType="textPersonName" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <RadioButton
-                            android:id="@+id/radioButton"
+                        <RadioGroup
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:padding="15dp"
-                            android:paddingBottom="20dp"
-                            android:text="Male"
-                            android:textSize="25sp"
-                            android:textStyle="normal"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toTopOf="@id/age"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.18"
+                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.246" />
+                            app:layout_constraintTop_toBottomOf="@id/type"
+                            app:layout_constraintVertical_bias="0.5">
 
-                        <RadioButton
-                            android:id="@+id/radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:padding="15dp"
-                            android:paddingBottom="20dp"
-                            android:text="Female"
-                            android:textSize="25sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.733"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.246" />
+                            <RadioButton
+                                android:id="@+id/radioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alegreya_sans_medium"
+                                android:padding="15dp"
+                                android:paddingBottom="20dp"
+                                android:text="Male"
+                                android:textSize="25sp"
+                                android:textStyle="normal"
+                                app:layout_constraintBaseline_toBaselineOf="@+id/radioButton2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.18"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alegreya_sans_medium"
+                                android:padding="15dp"
+                                android:paddingBottom="20dp"
+                                android:text="Female"
+                                android:textSize="25sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.733"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.246" />
+                        </RadioGroup>
+
 
                         <EditText
                             android:id="@+id/age"
@@ -153,7 +164,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Buddy's age"
-                            android:inputType="textPassword"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -171,7 +182,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Buddy's breed"
-                            android:inputType="textPassword"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +200,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="My name is...."
-                            android:inputType="textPassword"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -198,7 +209,7 @@
                             app:layout_constraintTop_toBottomOf="@id/breed"
                             app:layout_constraintVertical_bias="0.0" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/petHealth"
                             android:layout_width="305dp"
                             android:layout_height="47dp"
@@ -207,9 +218,11 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Health of buddy"
-                            android:inputType="textPassword"
+                            android:inputType="textPersonName"
                             android:paddingLeft="60dp"
+                            android:paddingTop="10dp"
                             android:textColorHint="#8B7E7E"
+                            android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -243,7 +256,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="My Buddy lives in..."
-                            android:inputType="number"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -261,7 +274,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Message for the new friend"
-                            android:inputType="number"
+                            android:inputType="textPersonName"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -281,6 +294,18 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.661" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.148"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.664"
+                            app:srcCompat="@drawable/baseline_health_and_safety_24" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
