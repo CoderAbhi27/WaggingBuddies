@@ -4,6 +4,8 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">#5FDCF0</item>
+    </style>
     <style name="Theme.WaggingBuddies" parent="Base.Theme.WaggingBuddies" />
 </resources>
