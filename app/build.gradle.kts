@@ -67,4 +67,6 @@ dependencies {
     implementation ("androidx.room:room-ktx:2.3.0")  // Replace with the latest version
     implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")  // Replace with the latest version
 
+    implementation ("com.squareup.picasso:picasso:2.8")
+
 }
