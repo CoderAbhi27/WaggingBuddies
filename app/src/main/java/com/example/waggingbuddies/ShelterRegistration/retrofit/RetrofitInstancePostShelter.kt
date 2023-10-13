@@ -15,7 +15,7 @@ class RetrofitInstancePostShelter {
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.239.150:3000")
+        .baseUrl("http://192.168.56.1:3000")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
