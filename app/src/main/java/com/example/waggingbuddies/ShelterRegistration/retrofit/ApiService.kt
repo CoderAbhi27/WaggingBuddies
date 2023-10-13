@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ApiService {
-    @POST("/postRequest")
+    @POST("/shelter")
     fun uplaodData(@Body RegData: ShelterDataClass) : Call<ApiResponse>
 }

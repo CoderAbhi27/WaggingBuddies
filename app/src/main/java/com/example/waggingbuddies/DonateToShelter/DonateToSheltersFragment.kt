@@ -49,7 +49,7 @@ class DonateToSheltersFragment : Fragment() {
         // itemdapter.notifyDataSetChanged()
    //     binding.loadingCardAllevents.visibility = View.VISIBLE
 
-        getEvents()
+        getShelters()
 
 
         binding.fab.setOnClickListener {
@@ -61,13 +61,13 @@ class DonateToSheltersFragment : Fragment() {
 
     }
 
-    private fun getEvents() {
+    private fun getShelters() {
         GlobalScope.launch(Dispatchers.IO) {
             viewModel.getShelter()
             delay(2000)
             this.launch(Dispatchers.Main) {
               //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.seteventList(viewModel.ShelterList)
+                itemAdapter.setShelterList(viewModel.ShelterList)
                 Log.i("Data",viewModel.ShelterList.toString())
             }
         }
