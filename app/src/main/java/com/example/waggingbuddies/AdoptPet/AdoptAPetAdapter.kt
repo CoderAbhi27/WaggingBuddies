@@ -18,14 +18,14 @@ import com.squareup.picasso.Picasso
 
 class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
 
-    private var petList = mutableListOf<PetsDataClass>()
+    private var PetList = mutableListOf<PetsDataClass>()
 
 
-    /*@SuppressLint("NotifyDataSetChanged")
-    fun seteventList(petList: MutableLiveData<List<PetsDataClass>?>){
+    @SuppressLint("NotifyDataSetChanged")
+    fun setPetList(petList: MutableLiveData<List<PetsDataClass>?>){
         try {
             this.PetList = petList.value!!.toMutableList()
-            Log.d("tag","eventList --> ${this.PetList}")
+            Log.d("tag","petList --> ${this.PetList}")
             notifyDataSetChanged()
             Log.d("tag","notified the data set changed")
         }
@@ -33,7 +33,7 @@ class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
             Log.i("errorInRetrieval","error in retrieval")
         }
 
-    }*/
+    }
 
 
 
@@ -54,7 +54,7 @@ class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val obj = petList[position]
+        val obj = PetList[position]
         obj.let {
                 pet ->
             holder.petName.text = pet.petName
@@ -78,7 +78,7 @@ class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return petList.size
+        return PetList.size
     }
 
 

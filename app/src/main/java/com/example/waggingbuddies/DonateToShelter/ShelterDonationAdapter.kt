@@ -22,7 +22,7 @@ class ShelterDonationAdapter: RecyclerView.Adapter<ShelterDonationAdapter.MyView
         fun setShelterList(shelterList: MutableLiveData<List<ShelterDataClass>?>){
             try {
                 this.ShelterList = shelterList.value!!.toMutableList()
-                Log.d("tag","eventList --> ${this.ShelterList}")
+                Log.d("tag","shelterList --> ${this.ShelterList}")
                 notifyDataSetChanged()
                 Log.d("tag","notified the data set changed")
             }

@@ -10,13 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.waggingbuddies.AdoptPet.retrofit.RetrofitInstancePet
-import com.example.waggingbuddies.DonateToShelter.ShelterDonationAdapter
-import com.example.waggingbuddies.DonateToShelter.ShelterViewModel
-import com.example.waggingbuddies.DonateToShelter.retrofit.RetrofitInstanceShelter
-import com.example.waggingbuddies.R
-import com.example.waggingbuddies.ShelterRegistration.ShelterRegistrationFragment
 import com.example.waggingbuddies.databinding.FragmentAdoptAPetBinding
-import com.example.waggingbuddies.databinding.FragmentDonateToSheltersBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
