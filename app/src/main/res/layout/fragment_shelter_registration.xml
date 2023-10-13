@@ -1,14 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ShelterRegistrationFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".RegisterYrPet.RegisterYourPetFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shelter Registration"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editShelterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name of the Shelter"/>
+
+        <EditText
+            android:id="@+id/editShelterLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address of the Shelter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories of Pets"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <CheckBox
+            android:id="@+id/checkDogs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dogs"/>
+
+        <CheckBox
+            android:id="@+id/checkCats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cats"/>
+
+        <CheckBox
+            android:id="@+id/checkCows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cows"/>
+
+        <CheckBox
+            android:id="@+id/checkBirds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birds"/>
+
+        <TextView
+            android:id="@+id/tvCapacityHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacity and Current Strength"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/dogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editCapacityDogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Total Capacity for Dogs"/>
+
+            <EditText
+                android:id="@+id/editCurrentDogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Current Strength of Dogs"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editCapacityCats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Total Capacity for Cats"/>
+
+            <EditText
+                android:id="@+id/editCurrentCats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Current Strength of Cats"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editCapacityCows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Total Capacity for Cows"/>
+
+            <EditText
+                android:id="@+id/editCurrentCows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Current Strength of Cows"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/birds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editCapacityBirds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Total Capacity for Birds"/>
+
+            <EditText
+                android:id="@+id/editCurrentBirds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Current Strength of Birds"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="Register Shelter"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

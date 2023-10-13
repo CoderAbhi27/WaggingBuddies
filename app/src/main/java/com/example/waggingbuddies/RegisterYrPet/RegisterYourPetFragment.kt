@@ -1,4 +1,4 @@
-package com.example.waggingbuddies.Fragments
+package com.example.waggingbuddies.RegisterYrPet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

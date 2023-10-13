@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.example.waggingbuddies.Fragments.AdoptAPetFragment
-import com.example.waggingbuddies.Fragments.ContactVeterinaryFragment
-import com.example.waggingbuddies.Fragments.DonateToSheltersFragment
-import com.example.waggingbuddies.Fragments.RegisterYourPetFragment
+import com.example.waggingbuddies.AdoptPet.AdoptAPetFragment
+import com.example.waggingbuddies.ContactVet.ContactVeterinaryFragment
+import com.example.waggingbuddies.DonateToShelter.DonateToSheltersFragment
+import com.example.waggingbuddies.RegisterYrPet.RegisterYourPetFragment
 import com.example.waggingbuddies.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
+
     }
 
     private fun replaceFragment(fragment: Fragment) {
