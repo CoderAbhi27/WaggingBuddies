@@ -7,5 +7,11 @@
     <style name="Button.White" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">#5FDCF0</item>
     </style>
+
+    <style name="roundImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+        <item name="color">#9EBD6F</item>
+    </style>
     <style name="Theme.WaggingBuddies" parent="Base.Theme.WaggingBuddies" />
 </resources>
