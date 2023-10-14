@@ -183,7 +183,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                 val adoptionDays = if (adoptionDaysText.isNotEmpty()) adoptionDaysText.toLong() else 0
                 val petAddress = if (petAdressText.isNotEmpty()) petAdressText else ""
 
-
+                val adoptionTime = System.currentTimeMillis() + adoptionDays*24*60*60*1000
                 val datamodel = PetsDataClass(
                     binding.autoCompleteTxt.text.toString(),
                     binding.name.text.toString(),
@@ -192,7 +192,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                     binding.ownerName.text.toString(),
                     userEmail!!,
                     petHealth,
-                    adoptionDays,
+                    adoptionTime,
                     petAddress,
                     imageUrl!!,
                     binding.message.text.toString(),
