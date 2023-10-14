@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5116478650",
+    "project_id": "wagging-buddies",
+    "storage_bucket": "wagging-buddies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5116478650:android:624f16f487dff3b9e4ee83",
+        "android_client_info": {
+          "package_name": "com.example.waggingbuddies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9NxdjzZDuy-zYXtosIoImaqkUGJhrD_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
