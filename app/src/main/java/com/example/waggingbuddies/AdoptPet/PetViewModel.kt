@@ -21,6 +21,9 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
             if (response.isSuccessful) {
                 val data = response.body()
                 if (data != null) {
+                    data.filter {
+                        it.petAdoptionTime < System.currentTimeMillis()
+                    }
                     // Data fetched successfully
                     Log.d("Data", data.toString())
                     PetList.postValue(data)

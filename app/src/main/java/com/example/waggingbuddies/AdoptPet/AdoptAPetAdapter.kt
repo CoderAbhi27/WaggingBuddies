@@ -81,7 +81,7 @@ class AdoptAPetAdapter(val context: Context): RecyclerView.Adapter<AdoptAPetAdap
                 intent.putExtra("petData", pet)
                 context.startActivity(intent)
 
-        }
+            }
 
 
         }

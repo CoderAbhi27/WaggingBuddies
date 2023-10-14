@@ -120,7 +120,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                         return@setOnClickListener
                     }
                     capacityList[1]= binding.editCapacityCats.text.toString().toInt()
-                    if(binding.editCurrentCats.text.isNotEmpty()) currList[0] = binding.editCurrentCats.text.toString().toInt()
+                    if(binding.editCurrentCats.text.isNotEmpty()) currList[1] = binding.editCurrentCats.text.toString().toInt()
                 }
 
                 if(binding.checkCows.isChecked){
@@ -129,7 +129,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                         return@setOnClickListener
                     }
                     capacityList[2]= binding.editCapacityCows.text.toString().toInt()
-                    if(binding.editCurrentCows.text.isNotEmpty()) currList[0] = binding.editCurrentCows.text.toString().toInt()
+                    if(binding.editCurrentCows.text.isNotEmpty()) currList[2] = binding.editCurrentCows.text.toString().toInt()
                 }
 
                 if(binding.checkBirds.isChecked){
@@ -138,7 +138,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                         return@setOnClickListener
                     }
                     capacityList[3]= binding.editCapacityBirds.text.toString().toInt()
-                    if(binding.editCurrentBirds.text.isNotEmpty()) currList[0] = binding.editCurrentBirds.text.toString().toInt()
+                    if(binding.editCurrentBirds.text.isNotEmpty()) currList[3] = binding.editCurrentBirds.text.toString().toInt()
                 }
 
                 data = ShelterDataClass(
@@ -187,7 +187,8 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
 
                 Log.i("Tag", response.toString())
 
-                Log.i("response", response.body()?.msg.toString())
+                Log.i("response",response.body()?.msg.toString())
+
                 if (response.body() == null) {
                     Toast.makeText(
                         requireContext(),
@@ -195,11 +196,13 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                         Toast.LENGTH_SHORT
                     ).show()
 
+
+
                 }
                 else
                     Toast.makeText(
                         requireContext(),
-                        "Member is Successfully Registered!!",
+                        "Shelter Registered Successfully",
                         Toast.LENGTH_SHORT
                     ).show()
 

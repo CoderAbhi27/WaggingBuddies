@@ -14,7 +14,7 @@ class RetrofitInstanceShelter {
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.239.150:3000")
+        .baseUrl("https://masterstack-o2dh.onrender.com")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

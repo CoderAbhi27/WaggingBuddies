@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface ShelterApiService {
-    @GET("/shelter")
+    @GET("/")
     suspend fun getShelter(): Response<List<ShelterDataClass>>
 }
