@@ -65,7 +65,7 @@
     <com.google.android.material.textfield.TextInputLayout
         cornerRadius="25dp"
         android:background="@drawable/rounded"
-        android:id="@+id/emailInputLayout1"
+        android:id="@+id/passwordInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
 
@@ -82,7 +82,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             cornerRadius="25dp"
-            android:id="@+id/EmailEntryField1"
+            android:id="@+id/passwordEntryField"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,7 +90,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/btnSignUp"
+        android:id="@+id/intentSignUp"
         style="@style/txtPoppinssemibold18"
 
         android:layout_width="wrap_content"
@@ -102,22 +102,23 @@
         android:text="New Here? Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
-    <!--<TextView
-        android:id="@+id/txtForgotpassword"
-        style="@style/txtPoppinssemibold15"
+    <TextView
+        android:id="@+id/forgotPassword"
+        style="@style/txtPoppinssemibold18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="forgot password"
+        android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
-        app:layout_constraintVertical_bias="0.173" />-->
+        app:layout_constraintTop_toBottomOf="@+id/intentSignUp"
+        app:layout_constraintVertical_bias="0.173" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignin"
@@ -130,5 +131,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
