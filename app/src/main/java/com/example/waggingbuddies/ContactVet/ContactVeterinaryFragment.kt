@@ -1,31 +1,66 @@
 package com.example.waggingbuddies.ContactVet
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.waggingbuddies.R
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.waggingbuddies.DataClass.VetsDataCLass
+import com.example.waggingbuddies.databinding.FragmentContactVeterinaryBinding
+import com.google.gson.Gson
+import java.io.BufferedReader
+import java.io.File
+import java.io.FileReader
+import java.io.InputStream
 
-class ContactVeterinaryFragment : Fragment(R.layout.fragment_contact_veterinary) {
-    // TODO: Rename and change types of parameters
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+class ContactVeterinaryFragment : Fragment() {
+
+    private lateinit var binding : FragmentContactVeterinaryBinding
+
+    private lateinit var vetsRecyclerView : RecyclerView
+    private var dataList : ArrayList<VetsDataCLass> = ArrayList<VetsDataCLass>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact_veterinary, container, false)
+    ): View
+    {
+        binding = FragmentContactVeterinaryBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        binding.rvVets.layoutManager = LinearLayoutManager(requireContext())
 
-        //write your code here
+        getData()
+
+        val itemAdapter = ContactVeterinaryAdapter(dataList)
+        binding.rvVets.adapter = itemAdapter
+        binding.rvVets.setHasFixedSize(true)
+
+
+
+
 
     }
+
+    private fun getData() {
+        val inputStream : InputStream = requireContext().assets.open("vet.json")
+        val size = inputStream.available()
+        val buffer = ByteArray(size)
+        inputStream.read(buffer)
+        inputStream.close()
+
+        val json = String(buffer, Charsets.UTF_8)
+
+        val gson = Gson()
+        val vets = gson.fromJson(json, Array<VetsDataCLass>::class.java)
+        dataList.addAll(vets)
+    }
+
+
 }
