@@ -43,7 +43,7 @@
                 android:layout_height="271dp"
                 android:src="@drawable/dogscats"
                 android:layout_marginTop="40dp"
-                android:layout_marginStart="35dp"
+                android:layout_marginStart="65dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
@@ -57,8 +57,7 @@
                 android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="Shelter's Name"
-                android:textColorHint="@color/white"
+                android:text="Shelter's Name"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +67,7 @@
                 app:layout_constraintVertical_bias="0.665"
                 android:layout_marginTop="30dp"
                 android:textAlignment="center"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="45dp"/>
 
             <EditText
                 android:id="@+id/editShelterLocation"
@@ -76,8 +75,7 @@
                 android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="Shelter's Location"
-                android:textColorHint="@color/white"
+                android:text="Shelter's Location"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +85,7 @@
                 app:layout_constraintVertical_bias="0.665"
                 android:layout_marginTop="5dp"
                 android:textAlignment="center"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="45dp"/>
 
             <TextView
                 android:id="@+id/textView3"
@@ -100,7 +98,7 @@
                 android:layout_marginTop="20dp"/>
 
             <LinearLayout
-                android:layout_width="360dp"
+                android:layout_width="406dp"
                 android:layout_height="67dp"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
@@ -174,12 +172,11 @@
 
                 <EditText
                     android:id="@+id/editCapacityDogs"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Total capacity for Dogs"
-                    android:textColorHint="@color/white"
+                    android:text="Total capacity for Dogs"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -193,12 +190,11 @@
 
                 <EditText
                     android:id="@+id/editCurrentDogs"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Current strength of Dogs"
-                    android:textColorHint="@color/white"
+                    android:text="Current strength of Dogs"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -221,12 +217,11 @@
 
                 <EditText
                     android:id="@+id/editCapacityCats"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Total capacity for Cats"
-                    android:textColorHint="@color/white"
+                    android:text="Total capacity for Cats"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -240,12 +235,11 @@
 
                 <EditText
                     android:id="@+id/editCurrentCats"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Current strength of Cats"
-                    android:textColorHint="@color/white"
+                    android:text="Current strength of Cats"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -268,12 +262,11 @@
 
                 <EditText
                     android:id="@+id/editCapacityCows"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Total capacity for Cows"
-                    android:textColorHint="@color/white"
+                    android:text="Total capacity for Cows"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -287,12 +280,11 @@
 
                 <EditText
                     android:id="@+id/editCurrentCows"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Current strength of Cows"
-                    android:textColorHint="@color/white"
+                    android:text="Current strength of Cows"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -315,12 +307,11 @@
 
                 <EditText
                     android:id="@+id/editCapacityBirds"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Total capacity for Cows"
-                    android:textColorHint="@color/white"
+                    android:text="Total capacity for Cows"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -334,12 +325,11 @@
 
                 <EditText
                     android:id="@+id/editCurrentBirds"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="55dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:hint="Current strength of Cows"
-                    android:textColorHint="@color/white"
+                    android:text="Current strength of Cows"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -355,7 +345,7 @@
 
             <Button
                 android:id="@+id/submitBtn"
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register Shelter"
                 android:textSize="18sp"
@@ -363,11 +353,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="8dp"/>
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
         </LinearLayout>
     </ScrollView>
 
