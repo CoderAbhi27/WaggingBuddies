@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 
 class AdoptAPetFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private val itemAdapter = AdoptAPetAdapter()
+    private lateinit var itemAdapter : AdoptAPetAdapter
     private lateinit var viewModel: PetViewModel
     lateinit var retrofitInstance : RetrofitInstancePet
     private lateinit var binding : FragmentAdoptAPetBinding
@@ -41,7 +41,7 @@ class AdoptAPetFragment : Fragment() {
         binding.rvPets.layoutManager = LinearLayoutManager(requireContext())
 
         // itemAdapter = AllEventsAdapter()
-
+        itemAdapter = AdoptAPetAdapter(requireContext())
         binding.rvPets.adapter = itemAdapter
         binding.rvPets.setHasFixedSize(true)
         // itemdapter.notifyDataSetChanged()

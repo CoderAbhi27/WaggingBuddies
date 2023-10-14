@@ -1,6 +1,8 @@
 package com.example.waggingbuddies.AdoptPet
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +13,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.example.waggingbuddies.Activities.petDescription
 import com.example.waggingbuddies.DataClass.PetsDataClass
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import com.example.waggingbuddies.R
 import com.squareup.picasso.Picasso
 
-class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
+class AdoptAPetAdapter(val context: Context): RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
 
     private var PetList = mutableListOf<PetsDataClass>()
 
@@ -72,6 +75,13 @@ class AdoptAPetAdapter: RecyclerView.Adapter<AdoptAPetAdapter.MyViewHolder>() {
                 Picasso.get().load(pet.petImageURL).into(holder.petImage)
             }
 
+            holder.itemView.setOnClickListener {
+                // When a pet card is clicked, open PetDescriptionActivity and pass the pet data
+                val intent = Intent(context, petDescription::class.java)
+                intent.putExtra("petData", pet)
+                context.startActivity(intent)
+
+        }
 
 
         }

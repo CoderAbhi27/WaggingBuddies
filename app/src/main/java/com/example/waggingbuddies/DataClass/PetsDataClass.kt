@@ -1,6 +1,7 @@
 package com.example.waggingbuddies.DataClass
 
 import android.media.Image
+import java.io.Serializable
 
 data class PetsDataClass (
     val petType: String,
@@ -15,4 +16,4 @@ data class PetsDataClass (
     val petImageURL: String,
     val adoptionMsg: String,
     val gender: Boolean //true-> female, false-> male
-)
+): Serializable

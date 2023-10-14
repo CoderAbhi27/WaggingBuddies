@@ -122,7 +122,7 @@
                             app:layout_constraintVertical_bias="0.5">
 
                             <RadioButton
-                                android:id="@+id/radioButton"
+                                android:id="@+id/radioButtonMale"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alegreya_sans_medium"
@@ -137,7 +137,7 @@
                                 app:layout_constraintStart_toStartOf="parent" />
 
                             <RadioButton
-                                android:id="@+id/radioButton2"
+                                android:id="@+id/radioButtonFemale"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/alegreya_sans_medium"
@@ -164,7 +164,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Buddy's age"
-                            android:inputType="textPersonName"
+                            android:inputType="number"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -218,7 +218,7 @@
                             android:ems="10"
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Health of buddy"
-                            android:inputType="textPersonName"
+                            android:inputType="number"
                             android:paddingLeft="60dp"
                             android:paddingTop="10dp"
                             android:textColorHint="#8B7E7E"
