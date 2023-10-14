@@ -15,5 +15,6 @@ data class PetsDataClass (
     val petAddress: String,
     val petImageURL: String,
     val adoptionMsg: String,
-    val gender: Boolean //true-> female, false-> male
+    val gender: Boolean, //true-> female, false-> male
+    val petID: String?=null
 ): Serializable
