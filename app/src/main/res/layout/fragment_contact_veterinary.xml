@@ -40,7 +40,7 @@
                 android:layout_width="103dp"
                 android:layout_height="80dp"
                 android:layout_marginVertical="12dp"
-                android:src="@drawable/pet2" />
+                android:src="@drawable/gethelp" />
 
         </LinearLayout>
     </ScrollView>
@@ -58,8 +58,8 @@
         android:layout_marginTop="120dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/vet_item_layout"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"/>
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"/>
 
     <!-- TODO: Update blank fragment layout -->
 
