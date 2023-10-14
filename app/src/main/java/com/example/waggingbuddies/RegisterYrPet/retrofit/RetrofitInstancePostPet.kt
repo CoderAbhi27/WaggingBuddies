@@ -1,12 +1,12 @@
-package com.example.waggingbuddies.AdoptPet.retrofit
+package com.example.waggingbuddies.RegisterYrPet.retrofit
 
-import com.example.waggingbuddies.DonateToShelter.retrofit.ShelterApiService
+import com.example.waggingbuddies.ShelterRegistration.retrofit.ApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitInstancePet {
+class RetrofitInstancePostPet {
     val client = OkHttpClient.Builder()
         .callTimeout(30, TimeUnit.SECONDS)
         .connectTimeout(30, TimeUnit.SECONDS) // Increase the connect timeout
@@ -15,10 +15,9 @@ class RetrofitInstancePet {
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("https://192.168.239.150:3000")
+        .baseUrl("http://192.168.8.150:3000")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-    val petApiService : PetApiService = retrofit.create(PetApiService::class.java)
+    val petPostApiService : ApiServicePet = retrofit.create(ApiServicePet::class.java)
 }
