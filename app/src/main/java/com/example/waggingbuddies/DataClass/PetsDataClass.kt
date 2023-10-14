@@ -13,7 +13,6 @@ data class PetsDataClass (
     val petAdoptionDays: Int,
     val petAddress: String,
     val petImageURL: String,
-    val adoptionTime: Long,
     val adoptionMsg: String,
     val gender: Boolean //true-> female, false-> male
 )

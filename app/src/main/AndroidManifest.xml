@@ -13,16 +13,24 @@
         android:theme="@style/Theme.WaggingBuddies"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.vetDescription"
+            android:name=".Activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.MainActivity"
-            android:exported="true">
+            android:name=".Activities.LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.vetDescription"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true">
+
         </activity>
 
         <meta-data
