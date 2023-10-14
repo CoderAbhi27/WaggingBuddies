@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Transaction Successful", Toast.LENGTH_SHORT).show()
             onPaymentSuccessful(data.getStringExtra("shelterID"), data.getStringExtra("amount"))
         } else {
-            Toast.makeText(this@MainActivity, "Transaction Failed", Toast.LENGTH_SHORT).show()
+        //    Toast.makeText(this@MainActivity, "Transaction Fai", Toast.LENGTH_SHORT).show()
         }
     }
 
