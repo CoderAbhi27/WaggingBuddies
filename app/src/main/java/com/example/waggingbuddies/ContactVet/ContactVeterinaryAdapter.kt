@@ -39,8 +39,6 @@ class ContactVeterinaryAdapter(private val dataList: ArrayList<VetsDataCLass>):
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-//        val tvQues : TextView = view.findViewById(R.id.Question)
-//        val ivQuesImg : ImageView = view.findViewById(R.id.quesImg)
         val tvName : TextView = view.findViewById(R.id.name)
         val tvEmail : TextView = view.findViewById(R.id.email)
         val tvAddress : TextView = view.findViewById(R.id.adress)
