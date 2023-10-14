@@ -43,8 +43,7 @@
                         android:background="@drawable/img"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-                        app:layout_constraintTop_toTopOf="parent" >
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout"
@@ -60,11 +59,11 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/lll"
-                        android:layout_width="367dp"
+                        android:layout_width="340dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="60dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="72dp"
+                        android:layout_marginEnd="70dp"
                         android:background="@drawable/white_background"
                         android:elevation="7dp"
                         android:orientation="vertical"
@@ -75,7 +74,7 @@
 
                         <EditText
                             android:id="@+id/name"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -93,7 +92,7 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/type"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="55dp"
                             android:layout_marginTop="28dp"
                             android:background="@drawable/rounded_edittext"
@@ -156,7 +155,7 @@
 
                         <EditText
                             android:id="@+id/age"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="70dp"
                             android:layout_marginBottom="30dp"
@@ -175,7 +174,7 @@
 
                         <EditText
                             android:id="@+id/breed"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -193,7 +192,7 @@
 
                         <EditText
                             android:id="@+id/ownerName"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -211,7 +210,7 @@
 
                         <TextView
                             android:id="@+id/petHealth"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -231,7 +230,7 @@
 
                         <EditText
                             android:id="@+id/adoptionDays"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -249,7 +248,7 @@
 
                         <EditText
                             android:id="@+id/petAdress"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -267,7 +266,7 @@
 
                         <EditText
                             android:id="@+id/message"
-                            android:layout_width="305dp"
+                            android:layout_width="290dp"
                             android:layout_height="47dp"
                             android:layout_marginTop="30dp"
                             android:background="@drawable/rounded_edittext"
@@ -275,6 +274,7 @@
                             android:fontFamily="@font/alegreya_sans_medium"
                             android:hint="Message for the new friend"
                             android:inputType="textPersonName"
+                            android:lines="8"
                             android:paddingLeft="20dp"
                             android:textColorHint="#8B7E7E"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -312,17 +312,29 @@
 
                     <Button
                         android:id="@+id/button5"
-                        android:layout_width="367dp"
+                        android:layout_width="340dp"
                         android:layout_height="wrap_content"
                         android:text="Find my Buddy a friend..."
                         android:textColor="@color/black"
-                        tools:layout_editor_absoluteY="1088dp"
+                        android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/lll"
-                        android:layout_marginTop="15dp"
-                        android:textSize="18sp" />
+                        app:layout_constraintVertical_bias="0.194" />
+
+                    <View
+                        android:id="@+id/viewfg"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:background="#E8E3CD"
+                        app:flow_verticalAlign="bottom"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintTop_toBottomOf="@id/button5"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/image"
@@ -332,10 +344,10 @@
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_bias="0.497"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
-                        app:layout_constraintVertical_bias="0.183" />
+                        app:layout_constraintVertical_bias="0.176" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
