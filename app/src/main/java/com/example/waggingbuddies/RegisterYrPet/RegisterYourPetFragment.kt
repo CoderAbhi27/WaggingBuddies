@@ -76,6 +76,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                     result.data?.data?.let{
                             uri ->
                         Log.i("TAG","onResultRecieved: $uri")
+                        Picasso.get().load(uri).into(binding.image)
                        uploadImageToCloudinary(uri)
                     }
                 }else{
@@ -126,9 +127,9 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                     .show()
             else if (binding.ownerName.text.isEmpty())
                 Toast.makeText(requireContext(), "Enter Your Name", Toast.LENGTH_SHORT).show()
-            else if (binding.petHealth.text.isEmpty())
-                Toast.makeText(requireContext(), "Give a health diagnosis", Toast.LENGTH_SHORT)
-                    .show()
+//            else if (binding.petHealth.text.isEmpty())
+//                Toast.makeText(requireContext(), "Give a health diagnosis", Toast.LENGTH_SHORT)
+//                    .show()
             else if (binding.adoptionDays.text.isEmpty())
                 Toast.makeText(
                     requireContext(),
@@ -181,14 +182,15 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                 val petAddress = if (petAdressText.isNotEmpty()) petAdressText else ""
 
                 val adoptionTime = System.currentTimeMillis() + adoptionDays*24*60*60*1000
-                val datamodel = PetsDataClass(
+                datamodel = PetsDataClass(
                     binding.autoCompleteTxt.text.toString(),
                     binding.name.text.toString(),
                     age,
                     binding.breed.text.toString(),
                     binding.ownerName.text.toString(),
                     userEmail!!,
-                    petHealth,
+                  //  petHealth,
+                    5,
                     adoptionTime,
                     petAddress,
                     imageUrl!!,
@@ -232,7 +234,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                 val result = cloudinary.uploader().upload(filePath, null)
                 val publicId = result.getValue("public_id")
                 Log.i("TAG","onPublicIdRecieved: $publicId")
-                val imageUrl = cloudinary.url().generate(publicId.toString())
+                 imageUrl = cloudinary.url().generate(publicId.toString())
                 Log.i("TAG","onimageUrlRecieved: $imageUrl")
 
                 // Handle the image URL as needed (e.g., update UI)
@@ -242,7 +244,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
                     Log.i("TAG", "onimageUrlRecieved: $imageUrl")
 //                    datamodel = datamodel.copy(petImageURL = imageUrl)
 
-                    Picasso.get().load(imageUrl).into(binding.image)
+           //
                 }
             } catch (e: Exception) {
                 // Handle the upload error

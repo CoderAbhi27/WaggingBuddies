@@ -65,6 +65,52 @@ class AdoptAPetFragment : Fragment() {
         }
     }
 
+    private fun getDogs() {
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            delay(2000)
+            this.launch(Dispatchers.Main) {
+                //  binding.loadingCardAllevents.visibility = View.GONE
+                itemAdapter.setPetList(viewModel.DogList)
+                Log.i("Data",viewModel.DogList.toString())
+            }
+        }
+    }
+
+    private fun getCat() {
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            delay(2000)
+            this.launch(Dispatchers.Main) {
+                //  binding.loadingCardAllevents.visibility = View.GONE
+                itemAdapter.setPetList(viewModel.CatList)
+                Log.i("Data",viewModel.CatList.toString())
+            }
+        }
+    }
+    private fun getCow() {
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            delay(2000)
+            this.launch(Dispatchers.Main) {
+                //  binding.loadingCardAllevents.visibility = View.GONE
+                itemAdapter.setPetList(viewModel.CowList)
+                Log.i("Data",viewModel.CowList.toString())
+            }
+        }
+    }
+
+    private fun getBird() {
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            delay(2000)
+            this.launch(Dispatchers.Main) {
+                //  binding.loadingCardAllevents.visibility = View.GONE
+                itemAdapter.setPetList(viewModel.BirdList)
+                Log.i("Data",viewModel.BirdList.toString())
+            }
+        }
+    }
 
 
 }
