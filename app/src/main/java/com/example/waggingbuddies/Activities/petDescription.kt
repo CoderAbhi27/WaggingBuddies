@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.waggingbuddies.AdoptPet.retrofit.PetApiService
 import com.example.waggingbuddies.DataClass.PetsDataClass
 import com.example.waggingbuddies.R
 import com.example.waggingbuddies.ShelterRegistration.retrofit.ApiResponse
@@ -71,11 +72,7 @@ class petDescription : AppCompatActivity() {
 
     }
 
- interface PetApiService {
 
-     @DELETE("pets/delete/{petId}")
-     suspend fun deletePet(@Path("petId") petId: String): Response<ApiResponse>
-    }
     private val petApiService: PetApiService
     init {
         val retrofit = Retrofit.Builder()
