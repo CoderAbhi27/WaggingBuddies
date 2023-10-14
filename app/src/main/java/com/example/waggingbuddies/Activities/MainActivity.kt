@@ -13,10 +13,15 @@ import com.example.waggingbuddies.RegisterYrPet.RegisterYourPetFragment
 import com.example.waggingbuddies.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         replaceFragment(AdoptAPetFragment())
 
@@ -48,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         val status = data?.getStringExtra("Status")?.toLowerCase()
         if ((AppCompatActivity.RESULT_OK == resultCode) && status == "success") {
             Toast.makeText(this@MainActivity, "Transaction Successful", Toast.LENGTH_SHORT).show()

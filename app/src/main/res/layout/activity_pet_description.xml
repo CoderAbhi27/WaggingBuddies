@@ -87,7 +87,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/petName"
                         android:layout_width="303dp"
                         android:layout_height="49dp"
                         android:layout_marginStart="10dp"
@@ -153,7 +153,7 @@
                         app:layout_constraintVertical_bias="0.754" />
 
                     <ImageView
-                        android:id="@+id/image1"
+                        android:id="@+id/male"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_weight="1"
@@ -167,7 +167,7 @@
                         app:srcCompat="@drawable/baseline_male_24" />
 
                     <ImageView
-                        android:id="@+id/image"
+                        android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_weight="1"
