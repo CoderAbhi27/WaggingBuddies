@@ -59,71 +59,71 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        val status = data?.getStringExtra("Status")?.toLowerCase()
+//        if ((AppCompatActivity.RESULT_OK == resultCode) && status == "success") {
+//            Toast.makeText(this@MainActivity, "Transaction Successful", Toast.LENGTH_SHORT).show()
+//            onPaymentSuccessful(data.getStringExtra("shelterID"), data.getStringExtra("amount"))
+//        } else {
+//        //    Toast.makeText(this@MainActivity, "Transaction Fai", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
-        val status = data?.getStringExtra("Status")?.toLowerCase()
-        if ((AppCompatActivity.RESULT_OK == resultCode) && status == "success") {
-            Toast.makeText(this@MainActivity, "Transaction Successful", Toast.LENGTH_SHORT).show()
-            onPaymentSuccessful(data.getStringExtra("shelterID"), data.getStringExtra("amount"))
-        } else {
-        //    Toast.makeText(this@MainActivity, "Transaction Fai", Toast.LENGTH_SHORT).show()
-        }
-    }
+//    private fun onPaymentSuccessful(shelterID: String?, amount: String?){
+//        Toast.makeText(this,"Thank you for donating rs$amount to $shelterID", Toast.LENGTH_SHORT).show()
+//
+//        updateDatabase(shelterID, amount)
+//    }
 
-    private fun onPaymentSuccessful(shelterID: String?, amount: String?){
-        Toast.makeText(this,"Thank you for donating rs$amount to $shelterID", Toast.LENGTH_SHORT).show()
-
-        updateDatabase(shelterID, amount)
-    }
-
-    private val petApiService: PetApiService
-
-    init {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://masterstack-o2dh.onrender.com/") // Replace with your API base URL
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        petApiService = retrofit.create(PetApiService::class.java)
-    }
-
-
-    private fun updateDatabase(shelterID: String?, donationAmount: String?) {
-        shelterID?.let {
-            // Create a RequestBody for the donation amount
-
-            val amountRequestBody =
-                donationAmount?.let { it1 -> RequestBody.create(MultipartBody.FORM, it1) }
-
-            // Launch a coroutine on the IO dispatcher to make the network request
-            MainScope().launch(Dispatchers.IO) {
-                try {
-                    // Call your API service to donate to a specific pet using a Multipart request
-                    val response =
-                        amountRequestBody?.let { it1 -> petApiService.donateToPet(shelterID, it1) }
-
-                    if (response != null) {
-                        if (response.isSuccessful) {
-                            runOnUiThread {
-                                Toast.makeText(this@MainActivity, "Donation Updated", Toast.LENGTH_SHORT).show()
-                            }
-                        } else {
-                            val errorBody = response.errorBody()?.string()
-                            runOnUiThread {
-                                Toast.makeText(this@MainActivity, "Failed to update donation", Toast.LENGTH_SHORT).show()
-                                // Handle the error further as needed
-                                Log.e("UpdateDonation", "Error: $errorBody")
-                            }
-                        }
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    runOnUiThread {
-                        Toast.makeText(this@MainActivity, "Network error", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        }
-    }
+//    private val petApiService: PetApiService
+//
+//    init {
+//        val retrofit = Retrofit.Builder()
+//            .baseUrl("https://masterstack-o2dh.onrender.com/") // Replace with your API base URL
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//        petApiService = retrofit.create(PetApiService::class.java)
+//    }
+//
+//
+//    private fun updateDatabase(shelterID: String?, donationAmount: String?) {
+//        shelterID?.let {
+//            // Create a RequestBody for the donation amount
+//
+//            val amountRequestBody =
+//                donationAmount?.let { it1 -> RequestBody.create(MultipartBody.FORM, it1) }
+//
+//            // Launch a coroutine on the IO dispatcher to make the network request
+//            MainScope().launch(Dispatchers.IO) {
+//                try {
+//                    // Call your API service to donate to a specific pet using a Multipart request
+//                    val response =
+//                        amountRequestBody?.let { it1 -> petApiService.donateToPet(shelterID, it1) }
+//
+//                    if (response != null) {
+//                        if (response.isSuccessful) {
+//                            runOnUiThread {
+//                                Toast.makeText(this@MainActivity, "Donation Updated", Toast.LENGTH_SHORT).show()
+//                            }
+//                        } else {
+//                            val errorBody = response.errorBody()?.string()
+//                            runOnUiThread {
+//                                Toast.makeText(this@MainActivity, "Failed to update donation", Toast.LENGTH_SHORT).show()
+//                                // Handle the error further as needed
+//                                Log.e("UpdateDonation", "Error: $errorBody")
+//                            }
+//                        }
+//                    }
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                    runOnUiThread {
+//                        Toast.makeText(this@MainActivity, "Network error", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 }

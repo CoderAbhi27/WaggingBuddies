@@ -20,10 +20,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.example.waggingbuddies.Activities.PaymentActivity
 import com.example.waggingbuddies.DataClass.ShelterDataClass
 import com.example.waggingbuddies.R
+import java.lang.IndexOutOfBoundsException
 
-class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<ShelterDonationAdapter.MyViewHolder>() {
+class ShelterDonationAdapter(val context: Context, val activity: Activity): RecyclerView.Adapter<ShelterDonationAdapter.MyViewHolder>() {
 
     private val GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user"
     private val GOOGLE_PAY_REQUEST_CODE = 123
@@ -69,7 +71,7 @@ class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<Shelter
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.shelter_card, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.shelter_item_layout, parent, false)
         return MyViewHolder(view)
 
     }
@@ -83,24 +85,30 @@ class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<Shelter
 
             val stages : List<Int> = shelter.totalCapacity
             val str : List<Int> = shelter.currentStrength
-            if (stages[0] == 0)
+
+            if (stages.size==0 || stages[0] == 0)
                 holder.dogLayout.visibility = View.GONE
-            if (stages[1] == 0)
+            if (stages.size<=1 ||stages[1] == 0)
                 holder.catLayout.visibility = View.GONE
-            if (stages[2] == 0)
+            if (stages.size<=2 ||stages[2] == 0)
                 holder.cowLayout.visibility = View.GONE
-            if (stages[3] == 0)
+            if (stages.size<=3 ||stages[3] == 0)
                 holder.birdLayout.visibility = View.GONE
 
-            holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
-            holder.dogCapacity.text= "Capacity: ${stages[0]}"
-            holder.dogStrength.text="Strength: ${str[0]}"
-            holder.catCapacity.text= "Capacity: ${stages[1]}"
-            holder.catStrenth.text="Strength: ${str[1]}"
-            holder.cowCapacity.text= "Capacity: ${stages[2]}"
-            holder.cowStrenth.text="Strength: ${str[2]}"
-            holder.birdCapacity.text= "Capacity: ${stages[3]}"
-            holder.birdStrenth.text="Strength: ${str[3]}"
+            try {
+                holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
+                holder.dogCapacity.text= "Capacity: ${stages[0]}"
+                holder.dogStrength.text="Strength: ${str[0]}"
+                holder.catCapacity.text= "Capacity: ${stages[1]}"
+                holder.catStrenth.text="Strength: ${str[1]}"
+                holder.cowCapacity.text= "Capacity: ${stages[2]}"
+                holder.cowStrenth.text="Strength: ${str[2]}"
+                holder.birdCapacity.text= "Capacity: ${stages[3]}"
+                holder.birdStrenth.text="Strength: ${str[3]}"
+            } catch (e: IndexOutOfBoundsException){
+
+            }
+
 
             holder.btnDonate.setOnClickListener {
                 val builder : AlertDialog.Builder = AlertDialog.Builder(context)
@@ -111,8 +119,15 @@ class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<Shelter
 //                builder.setMessage(getString(R.string.tnc_shelter))
                 builder.setPositiveButton("CONFIRM", DialogInterface.OnClickListener{ dialog, which->
                     val etAmount: EditText = dialogView.findViewById(R.id.etAmount)
-                    val uri = getUpiPaymentUri(shelter.name, UPI_ID, "Donate this shelterr", etAmount.text.toString())
-                    payWithGPay(uri, shelter, etAmount.text.toString())
+
+                    val intent = Intent(context,PaymentActivity::class.java)
+                    intent.putExtra("name", shelter.name)
+                    intent.putExtra("amount", etAmount.text.toString())
+                    intent.putExtra("shelterID", shelter.shelterID)
+                    activity.startActivity(intent)
+
+//                    val uri = getUpiPaymentUri(shelter.name, UPI_ID, "Donate this shelter", etAmount.text.toString())
+//                    payWithGPay(uri, shelter, etAmount.text.toString())
 
                 })
                 builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which->
@@ -133,39 +148,39 @@ class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<Shelter
 
 
 
-    private fun isAppInstalled(context: Context, packageName: String): Boolean {
-        return try {
-            context.packageManager.getApplicationInfo(packageName, 0)
-            true
-        } catch (e: PackageManager.NameNotFoundException) {
-            true
-        }
-    }
-
-    private fun getUpiPaymentUri(name: String, upiId: String, transactionNote: String, amount: String): Uri {
-        return Uri.Builder()
-            .scheme("upi")
-            .authority("pay")
-            .appendQueryParameter("pa", upiId)
-            .appendQueryParameter("pn", name)
-            .appendQueryParameter("tn", transactionNote)
-            .appendQueryParameter("am", amount)
-            .appendQueryParameter("cu", "INR")
-            .build()
-    }
-
-    private fun payWithGPay(uri: Uri, shelter: ShelterDataClass, amount: String) {
-        if (isAppInstalled(context, GOOGLE_PAY_PACKAGE_NAME)) {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = uri
-            intent.putExtra("shelterID", shelter.shelterID)
-            intent.putExtra("amount", amount)
-            intent.`package` = GOOGLE_PAY_PACKAGE_NAME
-            startActivityForResult(Activity(), intent, GOOGLE_PAY_REQUEST_CODE, null)
-        } else {
-            Toast.makeText(context, "Please Install GPay", Toast.LENGTH_SHORT).show()
-        }
-    }
+//    private fun isAppInstalled(context: Context, packageName: String): Boolean {
+//        return try {
+//            context.packageManager.getApplicationInfo(packageName, 0)
+//            true
+//        } catch (e: PackageManager.NameNotFoundException) {
+//            true
+//        }
+//    }
+//
+//    private fun getUpiPaymentUri(name: String, upiId: String, transactionNote: String, amount: String): Uri {
+//        return Uri.Builder()
+//            .scheme("upi")
+//            .authority("pay")
+//            .appendQueryParameter("pa", upiId)
+//            .appendQueryParameter("pn", name)
+//            .appendQueryParameter("tn", transactionNote)
+//            .appendQueryParameter("am", amount)
+//            .appendQueryParameter("cu", "INR")
+//            .build()
+//    }
+//
+//    private fun payWithGPay(uri: Uri, shelter: ShelterDataClass, amount: String) {
+//        if (isAppInstalled(context, GOOGLE_PAY_PACKAGE_NAME)) {
+//            val intent = Intent(Intent.ACTION_VIEW)
+//            intent.data = uri
+//            intent.putExtra("shelterID", shelter.shelterID)
+//            intent.putExtra("amount", amount)
+//            intent.`package` = GOOGLE_PAY_PACKAGE_NAME
+//            startActivityForResult(Activity(), intent, GOOGLE_PAY_REQUEST_CODE, null)
+//        } else {
+//            Toast.makeText(context, "Please Install GPay", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
 
 

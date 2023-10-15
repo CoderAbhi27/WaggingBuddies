@@ -44,7 +44,7 @@ class DonateToSheltersFragment : Fragment() {
 
         // itemAdapter = AllEventsAdapter()
 
-        itemAdapter = ShelterDonationAdapter(requireContext())
+        itemAdapter = ShelterDonationAdapter(requireContext(), requireActivity())
         binding.rvShelter.adapter = itemAdapter
         binding.rvShelter.setHasFixedSize(true)
         // itemdapter.notifyDataSetChanged()
