@@ -1,5 +1,7 @@
 package com.example.waggingbuddies.ContactVet
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.waggingbuddies.DataClass.VetsDataCLass
 import com.example.waggingbuddies.R
@@ -14,6 +17,16 @@ import com.squareup.picasso.Picasso
 
 class ContactVeterinaryAdapter(private val dataList: ArrayList<VetsDataCLass>):
     RecyclerView.Adapter<ContactVeterinaryAdapter.ViewHolder>(){
+
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(contactNo : String)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,6 +45,22 @@ class ContactVeterinaryAdapter(private val dataList: ArrayList<VetsDataCLass>):
         holder.tvEmail.text = data.contactEmail
         if(data.imgUrl!=null) Picasso.get().load(data.imgUrl).into(holder.ivImage)
 
+        holder.btnContact.setOnClickListener {
+//            val validNumber = Regex("^[+]?[0-9]{10}$")
+//            val validNumber2 = Regex("^[+]"+"91"+"[+]?[0-9]{10}$")
+
+//            if (data.contactNo.matches(validNumber
+//                ) or data.contactNo.matches(validNumber2)) {
+
+//                val call: Uri = Uri.parse("tel:${data.contactNo}")
+//                val intent = Intent(Intent.ACTION_DIAL, call)
+//                startActivity(intent)
+
+                mListener.onItemClick(data.contactNo)
+
+//            }
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -44,6 +73,7 @@ class ContactVeterinaryAdapter(private val dataList: ArrayList<VetsDataCLass>):
         val tvAddress : TextView = view.findViewById(R.id.adress)
         val tvContact : TextView = view.findViewById(R.id.contact)
         val ivImage : ImageView = view.findViewById(R.id.image)
+        val btnContact : Button = view.findViewById(R.id.btnContact)
 
     }
 }
