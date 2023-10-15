@@ -52,7 +52,7 @@ class petDescription : AppCompatActivity() {
 if (data != null)
 {
     Picasso.get().load(data.petImageURL).into(binding.imageOfPet)
-    binding.age.text = data.petAge.toString()
+    binding.age.text = "${data.petAge.toString()} years"
     binding.breed.text = data.petBreed
     binding.petName.text = data.petName
     binding.health.text = data.petHealth.toString()

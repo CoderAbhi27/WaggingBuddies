@@ -7,13 +7,14 @@
     tools:context=".Activities.petDescription">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#A6D247"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#A6D247">
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -157,13 +158,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_weight="1"
+                        android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.357"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.881"
-                        android:visibility="visible"
                         app:srcCompat="@drawable/baseline_male_24" />
 
                     <ImageView
@@ -213,10 +214,10 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:src="@drawable/healthimg"
+                        android:layout_marginStart="30dp"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="30dp"/>
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/healthimg" />
 
 
                     <TextView
@@ -249,8 +250,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="390dp"
+                android:orientation="vertical"
                 android:paddingTop="25dp">
 
 
@@ -263,8 +264,8 @@
                         android:id="@+id/imageView5"
                         android:layout_width="200dp"
                         android:layout_height="60dp"
-                        android:layout_weight="1"
                         android:layout_marginStart="15dp"
+                        android:layout_weight="1"
                         android:src="@drawable/house" />
 
                     <LinearLayout
@@ -279,45 +280,51 @@
                             android:layout_height="wrap_content"
                             android:text="Alex Martin"
                             android:textSize="25sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/adress"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
                             android:layout_marginTop="5dp"
+                            android:text="Dhanbad, Jharkhand"
                             android:textSize="18sp"
-                            android:text="Dhanbad, Jharkhand" />
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/msg"
-                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:layout_marginEnd="30dp"
                     android:lines="15"
-                    android:layout_marginEnd="30dp"/>
+                    android:paddingTop="30dp"
+                    android:text="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="Adopt My Friend"
-                    android:textSize="20sp"/>
 
             </LinearLayout>
 
 
         </FrameLayout>
+
+
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Adopt My Friend"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

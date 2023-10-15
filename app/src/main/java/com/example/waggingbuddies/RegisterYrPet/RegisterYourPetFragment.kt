@@ -2,6 +2,7 @@ package com.example.waggingbuddies.RegisterYrPet
 
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -14,9 +15,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.cloudinary.Cloudinary
 import com.example.waggingbuddies.DataClass.PetsDataClass
@@ -119,6 +122,27 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
             }
 
         }
+
+        binding.imageButton3.setOnClickListener {
+            val builder : AlertDialog.Builder = AlertDialog.Builder(requireContext())
+            val dialogView: View = LayoutInflater.from(
+                context).inflate(R.layout.health_dialogue, null)
+            builder.setView(dialogView)
+            builder.setTitle("Check your pet health")
+//                builder.setMessage(getString(R.string.tnc_shelter))
+            builder.setPositiveButton("CONFIRM", DialogInterface.OnClickListener{ dialog, which->
+                val health : Int = calculateHealth()
+                binding.petHealth.text = health.toString()
+
+            })
+            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which->
+
+            })
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.show()
+
+        }
+
         binding.button5.setOnClickListener {
 
             if (binding.name.text.isEmpty())
@@ -219,6 +243,14 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
 
      }
+
+    private fun calculateHealth(): Int {
+//        var pts=0
+//        var cnt=0
+//        if(binding.)
+        return 0
+    }
+
     fun getFilePathFromUri(context: Context, uri: Uri): String? {
         var filePath: String = ""
         val projection = arrayOf(MediaStore.Images.Media.DATA)
