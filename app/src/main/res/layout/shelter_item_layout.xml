@@ -80,33 +80,11 @@
                         android:textSize="17sp"/>
 
                     <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Capacity :-"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
                         android:id="@+id/dogCapacity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="100"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/dddd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Strength :-"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp"
@@ -142,33 +120,11 @@
                         android:textSize="17sp"/>
 
                     <TextView
-                        android:id="@+id/textView8w"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Capacity :-"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="14dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
                         android:id="@+id/catsCapacity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="100"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/deedfe"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Strength :-"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp"
@@ -204,33 +160,11 @@
                         android:textSize="17sp"/>
 
                     <TextView
-                        android:id="@+id/textView8ds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Capacity :-"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="6dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
                         android:id="@+id/cowsCapacity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="100"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/dsadsf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Strength :-"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp"
@@ -266,33 +200,11 @@
                         android:textSize="17sp"/>
 
                     <TextView
-                        android:id="@+id/textView8sasj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Capacity :-"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
                         android:id="@+id/birdsCapacity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="100"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginStart="10dp"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/dsc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Strength :-"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp"
