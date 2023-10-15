@@ -33,9 +33,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image"
-            android:layout_width="185dp"
-            android:layout_height="187dp"
+            android:layout_width="300dp"
+            android:layout_height="190dp"
             android:src="@drawable/cat"
+            android:scaleType="centerCrop"
             android:layout_gravity="center"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout

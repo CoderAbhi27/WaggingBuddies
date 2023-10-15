@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.petDescription"
+            android:exported="false" />
+        <activity
             android:name=".Activities.PaymentActivity"
             android:exported="false" />
         <activity
@@ -40,7 +43,9 @@
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
