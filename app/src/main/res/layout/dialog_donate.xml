@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter the amount to donate(in ₹) : "
+        android:text="Enter the amount to donate (in ₹) : "
         android:textSize="16dp"
         android:textColor="@color/black"
         android:textAlignment="center"
