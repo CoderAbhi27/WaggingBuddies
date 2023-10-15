@@ -33,9 +33,9 @@ class AdoptAPetFragment : Fragment() {
         binding = FragmentAdoptAPetBinding.inflate(inflater, container, false)
 
         val list= resources.getStringArray(R.array.List)
-        val root: View = binding!!.root
+        val root: View = binding.root
         val arrayAdapter = ArrayAdapter(requireContext(),R.layout.item_list,list)
-        binding!!.autoCompleteTxt.setAdapter(arrayAdapter)
+        binding.petType.setAdapter(arrayAdapter)
 
 
         return binding.root
@@ -56,8 +56,13 @@ class AdoptAPetFragment : Fragment() {
         // itemdapter.notifyDataSetChanged()
         //     binding.loadingCardAllevents.visibility = View.VISIBLE
 
-        getPets()
-
+        when(binding.petType.text.toString()){
+            "All" -> getPets()
+            "Dogs" -> getDogs()
+            "Cats" -> getCat()
+            "Cows" -> getCow()
+            "Birds" -> getBird()
+        }
 
 
     }

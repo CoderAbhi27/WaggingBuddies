@@ -77,5 +77,9 @@ dependencies {
     implementation ("com.cloudinary:cloudinary-android:2.3.1")
     implementation ("com.cloudinary:cloudinary-core:1.24.0")
 
+    //Glide
+//    implementation ("com.github.bumptech.glide:glide:4.12.0")
+//    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
 
 }

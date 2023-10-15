@@ -15,7 +15,7 @@ class RetrofitInstancePet {
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("https://192.168.239.150:3000")
+        .baseUrl("https://masterstack-sk23.onrender.com")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

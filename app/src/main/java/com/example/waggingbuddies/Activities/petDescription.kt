@@ -25,7 +25,7 @@ import retrofit2.http.Path
 
 class petDescription : AppCompatActivity() {
 
-    val  data : PetsDataClass = intent.getSerializableExtra("petData") as PetsDataClass
+    private lateinit var data : PetsDataClass
     private lateinit var binding: ActivityPetDescriptionBinding
   //  data = intent.getSerializableExtra("petData") as PetsDataClass
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,39 +34,57 @@ class petDescription : AppCompatActivity() {
         binding = ActivityPetDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+      val petName = intent.getStringExtra("petName") ?: ""
+      val petType = intent.getStringExtra("petType") ?: ""
+      val petAge = intent.getIntExtra("petAge", 0) ?: 0 // Assuming petAge is an int, provide a default value if needed
+      val petImageUrl = intent.getStringExtra("petImageUrl") ?: ""
+      val petBreed = intent.getStringExtra("petBreed") ?: ""
+      val petHealth = intent.getIntExtra("petHealth",0) ?: 0
+      val petOwner = intent.getStringExtra("petOwner") ?: ""
+      val petAddress = intent.getStringExtra("petAddress") ?: ""
+      val adoptionMsg = intent.getStringExtra("adoptionMsg") ?: ""
+      val gender = intent.getBooleanExtra("gender",false) ?: false
+      val petOwnerEmail= intent.getStringExtra("email") ?: ""
+      val adoptionTime=intent.getLongExtra("time",10000L) ?: 10000L
+      val petId= intent.getStringExtra("id") ?: ""
+      data= PetsDataClass(petType,petName,petAge,petBreed,petOwner,petOwnerEmail,petHealth,adoptionTime,petAddress,petImageUrl,adoptionMsg,gender,petId)
         //get data in data
+if (data != null)
+{
+    Picasso.get().load(data.petImageURL).into(binding.imageOfPet)
+    binding.age.text = data.petAge.toString()
+    binding.breed.text = data.petBreed
+    binding.petName.text = data.petName
+    binding.health.text = data.petHealth.toString()
+    binding.type.text = data.petType
+    binding.ownerName.text = data.petOwnersName
+    binding.msg.text = data.adoptionMsg
+    binding.adress.text = data.petAddress
+    if(data.gender){
+        binding.female.visibility = View.VISIBLE
+        binding.male.visibility = View.GONE
+    } else {
+        binding.male.visibility = View.VISIBLE
+        binding.female.visibility = View.GONE
+    }
 
+    binding.button.setOnClickListener {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("ADOPT THIS BUDDY?")
+        builder.setPositiveButton("CONFIRM", DialogInterface.OnClickListener{ dialog, which->
+            Toast.makeText(this, "Yayy!! You adopted a buddy!", Toast.LENGTH_LONG)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            data.petID?.let { it1 -> deletePet(it1) }
+        })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which-> })
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
 
-        Picasso.get().load(data.petImageURL).into(binding.imageOfPet)
-        binding.age.text = data.petAge.toString()
-        binding.breed.text = data.petBreed
-        binding.petName.text = data.petName
-        binding.health.text = data.petHealth.toString()
-        binding.type.text = data.petType
-        binding.ownerName.text = data.petOwnersName
-        binding.msg.text = data.adoptionMsg
-        binding.adress.text = data.petAddress
-        if(data.gender){
-            binding.female.visibility = View.VISIBLE
-            binding.male.visibility = View.GONE
-        } else {
-            binding.male.visibility = View.VISIBLE
-            binding.female.visibility = View.GONE
-        }
-
-        binding.button.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("ADOPT THIS BUDDY?")
-            builder.setPositiveButton("CONFIRM", DialogInterface.OnClickListener{ dialog, which->
-                Toast.makeText(this, "Yayy!! You adopted a buddy!", Toast.LENGTH_LONG)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                data.petID?.let { it1 -> deletePet(it1) }
-            })
-            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which-> })
-            val alertDialog: AlertDialog = builder.create()
-            alertDialog.show()
-        }
+}
+else
+    Toast.makeText(this,"Null Pointer",Toast.LENGTH_SHORT).show()
 
 
 

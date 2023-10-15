@@ -1,5 +1,7 @@
 package com.example.waggingbuddies.ContactVet
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +45,15 @@ class ContactVeterinaryFragment : Fragment() {
         binding.rvVets.setHasFixedSize(true)
 
 
+        itemAdapter.setOnItemClickListener(object: ContactVeterinaryAdapter.onItemClickListener{
+
+            override fun onItemClick(contactNo: String) {
+                val call: Uri = Uri.parse("tel:$contactNo")
+                val intent = Intent(Intent.ACTION_DIAL, call)
+                startActivity(intent)
+            }
+
+        })
 
 
 

@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/name">
 
                 <AutoCompleteTextView
-                    android:id="@+id/auto_complete_txt"
+                    android:id="@+id/petType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="All"

@@ -33,6 +33,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 
@@ -265,14 +266,14 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
         Log.i("dataModel",data.toString())
         val call = RetrofitInstancePostPet().petPostApiService.uplaodData(data)
-        call.enqueue(object : retrofit2.Callback<ApiResponse>{
-            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+        call.enqueue(object : retrofit2.Callback<ResponseBody>{
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
 
 
 
                 Log.i("Tag", response.toString())
 
-               Log.i("response", response.body()?.msg.toString())
+               Log.i("response", response.body().toString())
                 if (response.body() == null) {
                     Toast.makeText(
                         requireContext(),
@@ -291,7 +292,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
             }
 
-            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.i("Tag",t.toString())
 
                 Toast.makeText(requireContext(),"Try again !!, It may happen first time",Toast.LENGTH_SHORT).show()
