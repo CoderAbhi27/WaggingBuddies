@@ -41,7 +41,7 @@ class ShelterDonationAdapter(val context: Context): RecyclerView.Adapter<Shelter
             Log.d("tag","notified the data set changed")
         }
         catch (e: Exception){
-            Log.i("errorInRetrieval","error in retrieval")
+            Log.i("errorInRetrieval",e.toString())
         }
 
     }

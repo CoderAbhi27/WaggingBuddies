@@ -73,12 +73,35 @@ class AdoptAPetAdapter(val context: Context): RecyclerView.Adapter<AdoptAPetAdap
 
             if(pet.petImageURL!=null){
                 Picasso.get().load(pet.petImageURL).into(holder.petImage)
-            }
+//                val requestOptions = RequestOptions()
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL) // Caching strategy
+//                    .placeholder(R.drawable.placeholder_image) // Placeholder image
+//                    .error(R.drawable.error_image) // Error image
+
+// Load the image into the ImageView
+//                Glide.with(this)
+//                    .load(pet.petImageURL)
+//                 // Optional RequestOptions
+//                    .into(holder.petImage)
+//                Log.i("url",pet.petImageURL)
+           }
 
             holder.itemView.setOnClickListener {
                 // When a pet card is clicked, open PetDescriptionActivity and pass the pet data
                 val intent = Intent(context, petDescription::class.java)
-                intent.putExtra("petData", pet)
+                intent.putExtra("petName", pet.petName)
+                intent.putExtra("petType", pet.petType)
+                intent.putExtra("petAge", pet.petAge)
+                intent.putExtra("petImageUrl", pet.petImageURL)
+                intent.putExtra("petBreed", pet.petBreed)
+                intent.putExtra("petHealth", pet.petHealth)
+                intent.putExtra("petOwner", pet.petOwnersName)
+                intent.putExtra("petAddress", pet.petAddress)
+                intent.putExtra("adoptionMsg", pet.adoptionMsg)
+                intent.putExtra("gender", pet.gender)
+                intent.putExtra("email", pet.petOwnerEmail)
+                intent.putExtra("time", pet.petAdoptionTime)
+                intent.putExtra("id", pet.petID)
                 context.startActivity(intent)
 
             }
