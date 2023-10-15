@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/dietandnutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diet and Nutrition"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/good"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/average"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/bad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/dontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/exerciseandactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exercise and Activity"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/egood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/eaverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/ebad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/edontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/vaccination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vaccination Records"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/vgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/vaverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/vbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/vdontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dentalhealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dental Health"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/dgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/daverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/dbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/ddontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/earandeye"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ear and Eye Care"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/eargood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/earaverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/earbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/eardontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bloodwork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bloodwork"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/blgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/blaverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/blbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/bldontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/gastrohealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gastrointestional Health"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/ggood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/gaverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/gbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/gdontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/parasite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parasite Control"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/pgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/paverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/pbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/pdontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/stress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stress and Anxiety Managment"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/sgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/saverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/sbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/sdontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/livingcondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Living Conditions"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:layout_marginStart="25dp"
+                        android:id="@+id/lgood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/laverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/lbad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:paddingLeft="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/ldontknow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't know"
+                        android:paddingLeft="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</com.google.android.material.card.MaterialCardView>

@@ -152,8 +152,8 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
 
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Terms and Conditions")
-//                builder.setMessage(getString(R.string.tnc_shelter))
-                builder.setMessage("ahschsansna")
+                builder.setMessage(getString(R.string.tnc_shelter))
+//                builder.setMessage("ahschsansna")
                 builder.setPositiveButton("ACCEPT", DialogInterface.OnClickListener{ dialog, which->
                     pushData(data)
                 })

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -92,6 +93,12 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentRegisterYourPetBinding.inflate(inflater,container,false)
+        val list= resources.getStringArray(R.array.Listt)
+        val root: View = binding!!.root
+        val arrayAdapter = ArrayAdapter(requireContext(),R.layout.item_list,list)
+        binding!!.autoCompleteTxt.setAdapter(arrayAdapter)
+
+
         return binding.root
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
