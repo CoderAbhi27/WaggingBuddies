@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SignUpActivity">
+    tools:context=".Activities.SignUpActivity"
+    android:background="@drawable/vvvv">
     <TextView
         android:id="@+id/txtSignUp"
         style="@style/txtPoppinssemibold35"
