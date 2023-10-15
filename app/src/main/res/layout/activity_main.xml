@@ -30,7 +30,7 @@
             android:id="@+id/BottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background=" #D2475F"
+            android:background=" #CDC8E8"
             app:circularflow_radiusInDP="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircleRadius="20dp"
