@@ -123,7 +123,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
         }
 
-        binding.imageButton3.setOnClickListener {
+        binding.imageView.setOnClickListener {
             val builder : AlertDialog.Builder = AlertDialog.Builder(requireContext())
             val dialogView: View = LayoutInflater.from(
                 context).inflate(R.layout.health_dialogue, null)
@@ -248,7 +248,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 //        var pts=0
 //        var cnt=0
 //        if(binding.)
-        return 0
+        return 5
     }
 
     fun getFilePathFromUri(context: Context, uri: Uri): String? {
