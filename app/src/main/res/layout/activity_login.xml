@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.LoginActivity"
-    android:background="@drawable/ppp"
+    android:background="@drawable/korgee3"
     >
 
     <TextView
