@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.SignUpActivity"
-    android:background="@drawable/vvvv">
+    android:background="@drawable/korgee4">
     <TextView
         android:id="@+id/txtSignUp"
         style="@style/txtPoppinssemibold35"
