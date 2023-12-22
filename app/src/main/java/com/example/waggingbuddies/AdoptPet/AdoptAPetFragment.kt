@@ -1,22 +1,25 @@
 package com.example.waggingbuddies.AdoptPet
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.waggingbuddies.AdoptPet.retrofit.RetrofitInstancePet
 import com.example.waggingbuddies.R
 import com.example.waggingbuddies.databinding.FragmentAdoptAPetBinding
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 
 class AdoptAPetFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -56,73 +59,72 @@ class AdoptAPetFragment : Fragment() {
         // itemdapter.notifyDataSetChanged()
         //     binding.loadingCardAllevents.visibility = View.VISIBLE
 
-        when(binding.petType.text.toString()){
-            "All" -> getPets()
-            "Dogs" -> getDogs()
-            "Cats" -> getCat()
-            "Cows" -> getCow()
-            "Birds" -> getBird()
+
+        GlobalScope.launch(Dispatchers.IO) {
+            viewModel.getPet()
+            getPets()
+//            binding.loadingCardAllevents.visibility = View.GONE
         }
+
+
+        binding.petType.addTextChangedListener(object : TextWatcher {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                when (binding.petType.text.toString()) {
+                    "All" -> getPets()
+                    "Dogs" -> getDogs()
+                    "Cats" -> getCat()
+                    "Cows" -> getCow()
+                    "Birds" -> getBird()
+                }
+
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {
+            }
+
+            override fun afterTextChanged(s: Editable) {}
+        })
 
 
     }
 
     private fun getPets() {
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            delay(2000)
-            this.launch(Dispatchers.Main) {
-                //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.setPetList(viewModel.PetList)
-                Log.i("Data",viewModel.PetList.toString())
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            itemAdapter.setPetList(viewModel.PetList)
+            Log.i("Dataa","all - ${viewModel.PetList.value}")
         }
     }
 
     private fun getDogs() {
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            delay(2000)
-            this.launch(Dispatchers.Main) {
-                //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.setPetList(viewModel.DogList)
-                Log.i("Data",viewModel.DogList.toString())
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            itemAdapter.setPetList(viewModel.DogList)
+            Log.i("Dataa","dog - ${viewModel.DogList.value}")
         }
     }
 
     private fun getCat() {
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            delay(2000)
-            this.launch(Dispatchers.Main) {
-                //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.setPetList(viewModel.CatList)
-                Log.i("Data",viewModel.CatList.toString())
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            itemAdapter.setPetList(viewModel.CatList)
+            Log.i("Dataa","cat - ${viewModel.CatList.value}")
         }
     }
+
     private fun getCow() {
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            delay(2000)
-            this.launch(Dispatchers.Main) {
-                //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.setPetList(viewModel.CowList)
-                Log.i("Data",viewModel.CowList.toString())
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            itemAdapter.setPetList(viewModel.CowList)
+            Log.i("Dataa","cow - ${viewModel.CowList.value}")
         }
     }
 
     private fun getBird() {
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            delay(2000)
-            this.launch(Dispatchers.Main) {
-                //  binding.loadingCardAllevents.visibility = View.GONE
-                itemAdapter.setPetList(viewModel.BirdList)
-                Log.i("Data",viewModel.BirdList.toString())
-            }
+        CoroutineScope(Dispatchers.Main).launch {
+            itemAdapter.setPetList(viewModel.BirdList)
+            Log.i("Dataa","bird - ${viewModel.BirdList.value}")
         }
     }
 

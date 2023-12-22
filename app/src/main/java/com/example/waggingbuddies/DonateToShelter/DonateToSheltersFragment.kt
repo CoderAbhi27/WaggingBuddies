@@ -65,7 +65,7 @@ class DonateToSheltersFragment : Fragment() {
     private fun getShelters() {
         GlobalScope.launch(Dispatchers.IO) {
             viewModel.getShelter()
-            delay(2000)
+//            delay(2000)
             this.launch(Dispatchers.Main) {
               //  binding.loadingCardAllevents.visibility = View.GONE
                 itemAdapter.setShelterList(viewModel.ShelterList)

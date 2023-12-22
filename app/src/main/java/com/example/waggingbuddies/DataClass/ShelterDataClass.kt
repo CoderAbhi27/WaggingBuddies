@@ -5,6 +5,6 @@ data class ShelterDataClass(
     val address: String,
     val totalCapacity: List<Int>,
     val currentStrength: List<Int>,
-    val donationsRecieved: Int,
+    val donationReceived: Int,
     val shelterID: String?= null
 )

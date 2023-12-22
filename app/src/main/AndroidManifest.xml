@@ -29,9 +29,6 @@
             android:name=".Activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.petDescription"
-            android:exported="false" />
-        <activity
             android:name=".Activities.LoginActivity"
             android:exported="true">
             <intent-filter>

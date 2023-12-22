@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         replaceFragment(AdoptAPetFragment())
@@ -157,5 +158,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
+
+
 
 }

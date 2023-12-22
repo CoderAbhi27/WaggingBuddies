@@ -259,6 +259,8 @@
                         android:background="@drawable/newbutton"
                         android:paddingStart="15dp"
                         android:text="Donate"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="5dp"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>

@@ -147,7 +147,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                     binding.editShelterLocation.text.toString(),
                     capacityList.toList(),
                     currList.toList(),
-                    0
+                    1
                 )
 
                 val builder = AlertDialog.Builder(requireContext())

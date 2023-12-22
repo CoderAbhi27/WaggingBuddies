@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.waggingbuddies.AdoptPet.retrofit.RetrofitInstancePet
 import com.example.waggingbuddies.DataClass.PetsDataClass
+import kotlinx.coroutines.delay
 import retrofit2.Response
 
 class PetViewModel(application: Application): AndroidViewModel(application) {
@@ -20,52 +21,51 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
     suspend fun getPet()
     {
         Log.i("Data", "Function Called")
+//        delay(5000)
         try {
             val response: Response<List<PetsDataClass>> = retrofit.petApiService.getPets()
             if (response.isSuccessful) {
-                val data = response.body()
+                var data = response.body()
                 if (data != null) {
-                    data.filter {
+                    data = data.filter {
                         it.petAdoptionTime < System.currentTimeMillis()
                     }
                     // Data fetched successfully
                     Log.d("Data", data.toString())
                     PetList.postValue(data)
 
-                    data.filter {
-                        it.petAdoptionTime < System.currentTimeMillis()
-                                && it.petType=="Dog"
+                    val dogs = data.filter {
+                        it.petType=="Dog"
                     }
                     // Data fetched successfully
-                    Log.d("Data", data.toString())
-                    DogList.postValue(data)
+                    Log.d("Data", dogs.toString())
+                    DogList.postValue(dogs)
 
-                    data.filter {
-                        it.petAdoptionTime < System.currentTimeMillis()
-                                && it.petType=="Cat"
+                    val cats = data.filter {
+                        it.petType=="Cat"
                     }
                     // Data fetched successfully
-                    Log.d("Data", data.toString())
-                    CatList.postValue(data)
+                    Log.d("Data", cats.toString())
+                    CatList.postValue(cats)
 
-                    data.filter {
-                        it.petAdoptionTime < System.currentTimeMillis()
-                                && it.petType=="Cow"
+                    val cows = data.filter {
+                        it.petType=="Cow"
                     }
                     // Data fetched successfully
-                    Log.d("Data", data.toString())
-                    CowList.postValue(data)
+                    Log.d("Data", cows.toString())
+                    CowList.postValue(cows)
 
-                    data.filter {
-                        it.petAdoptionTime < System.currentTimeMillis()
-                                && it.petType=="Bird"
+                    val birds = data.filter {
+                        it.petType=="Bird"
                     }
                     // Data fetched successfully
-                    Log.d("Data", data.toString())
-                    BirdList.postValue(data)
+                    Log.d("Data", birds.toString())
+                    BirdList.postValue(birds)
 
 
                 }
+
+
             } else {
                 // Handle API error here
                 // For example, you can throw a custom exception or return an empty list

@@ -5,8 +5,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,9 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.waggingbuddies.Activities.PaymentActivity
@@ -60,7 +56,7 @@ class ShelterDonationAdapter(val context: Context, val activity: Activity): Recy
         var cowCapacity: TextView =itemView.findViewById(R.id.cowsCapacity)
         var cowStrenth: TextView =itemView.findViewById(R.id.cowsStrength)
         var birdCapacity: TextView =itemView.findViewById(R.id.birdsCapacity)
-        var birdStrenth: TextView =itemView.findViewById(R.id.textShelterLocation)
+        var birdStrenth: TextView =itemView.findViewById(R.id.birdsStrength)
         var dogLayout: LinearLayout =itemView.findViewById(R.id.DogDetails)
         var catLayout: LinearLayout =itemView.findViewById(R.id.CatDetails)
         var cowLayout: LinearLayout =itemView.findViewById(R.id.CowDetails)
@@ -82,6 +78,7 @@ class ShelterDonationAdapter(val context: Context, val activity: Activity): Recy
                 shelter ->
             holder.shelterName.text = shelter.name
             holder.shelterLocation.text = shelter.address
+            Log.i("Tag",shelter.address.toString())
 
             val stages : List<Int> = shelter.totalCapacity
             val str : List<Int> = shelter.currentStrength
@@ -96,7 +93,7 @@ class ShelterDonationAdapter(val context: Context, val activity: Activity): Recy
                 holder.birdLayout.visibility = View.GONE
 
             try {
-                holder.totalDonation.text = "Donation: ${shelter.donationsRecieved}"
+                holder.totalDonation.text = "Donation: ${shelter.donationReceived}"
                 holder.dogCapacity.text= "Capacity: ${stages[0]}"
                 holder.dogStrength.text="Strength: ${str[0]}"
                 holder.catCapacity.text= "Capacity: ${stages[1]}"
