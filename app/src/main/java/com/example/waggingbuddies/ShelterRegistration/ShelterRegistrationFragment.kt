@@ -21,7 +21,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 
-class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registration) {
+class ShelterRegistrationFragment : Fragment() {
 
     private lateinit var binding : FragmentShelterRegistrationBinding
     private lateinit var data: ShelterDataClass
@@ -36,8 +36,11 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//    }
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
 
         binding.checkDogs.setOnClickListener {
             if(binding.checkDogs.isChecked){
@@ -147,7 +150,7 @@ class ShelterRegistrationFragment : Fragment(R.layout.fragment_shelter_registrat
                     binding.editShelterLocation.text.toString(),
                     capacityList.toList(),
                     currList.toList(),
-                    1
+                    0
                 )
 
                 val builder = AlertDialog.Builder(requireContext())

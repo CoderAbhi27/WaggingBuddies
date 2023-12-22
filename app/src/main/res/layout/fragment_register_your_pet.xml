@@ -8,353 +8,412 @@
     android:backgroundTint="#EDEDED">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="#E8E3CD"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="269dp"
+                android:src="@drawable/img"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#DAD7D7">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#E8E3CD"
-                    android:paddingBottom="20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout2"
-                        android:layout_width="match_parent"
-                        android:layout_height="269dp"
-                        android:background="@drawable/img"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-                        app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="285dp"
-                        android:background="@drawable/back"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/lll"
-                        android:layout_width="340dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="70dp"
-                        android:layout_marginTop="72dp"
-                        android:layout_marginEnd="70dp"
-                        android:background="@drawable/white_background"
-                        android:elevation="7dp"
-                        android:orientation="vertical"
-                        android:paddingBottom="30dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                        <EditText
-                            android:id="@+id/name"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="Buddy's Name"
-                            android:inputType="textPersonName"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/type"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                            android:layout_width="290dp"
-                            android:layout_height="55dp"
-                            android:layout_marginTop="28dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:hint="My Buddy is a..."
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/name">
-
-                            <AutoCompleteTextView
-                                android:id="@+id/auto_complete_txt"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/rounded_edittext"
-                                android:inputType="textPersonName" />
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            app:layout_constraintBottom_toTopOf="@id/age"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/type"
-                            app:layout_constraintVertical_bias="0.5">
-
-                            <RadioButton
-                                android:id="@+id/radioButtonMale"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alegreya_sans_medium"
-                                android:padding="15dp"
-                                android:paddingBottom="20dp"
-                                android:text="Male"
-                                android:textSize="25sp"
-                                android:textStyle="normal"
-                                app:layout_constraintBaseline_toBaselineOf="@+id/radioButton2"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.18"
-                                app:layout_constraintStart_toStartOf="parent" />
-
-                            <RadioButton
-                                android:id="@+id/radioButtonFemale"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alegreya_sans_medium"
-                                android:padding="15dp"
-                                android:paddingBottom="20dp"
-                                android:text="Female"
-                                android:textSize="25sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.733"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.246" />
-                        </RadioGroup>
-
-
-                        <EditText
-                            android:id="@+id/age"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="70dp"
-                            android:layout_marginBottom="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="Buddy's age"
-                            android:inputType="number"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/type"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <EditText
-                            android:id="@+id/breed"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="Buddy's breed"
-                            android:inputType="textPersonName"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/age"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <EditText
-                            android:id="@+id/ownerName"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="My name is...."
-                            android:inputType="textPersonName"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/breed"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <TextView
-                            android:id="@+id/petHealth"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="Health of buddy"
-                            android:inputType="number"
-                            android:paddingLeft="60dp"
-                            android:paddingTop="10dp"
-                            android:textColorHint="#8B7E7E"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/ownerName"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <EditText
-                            android:id="@+id/adoptionDays"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="I can keep my Buddy for..."
-                            android:inputType="number"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/petHealth"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <EditText
-                            android:id="@+id/petAdress"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="My Buddy lives in..."
-                            android:inputType="textPersonName"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/adoptionDays"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <EditText
-                            android:id="@+id/message"
-                            android:layout_width="290dp"
-                            android:layout_height="47dp"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rounded_edittext"
-                            android:ems="10"
-                            android:fontFamily="@font/alegreya_sans_medium"
-                            android:hint="Message for the new friend"
-                            android:inputType="textPersonName"
-                            android:lines="8"
-                            android:paddingLeft="20dp"
-                            android:textColorHint="#8B7E7E"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/petAdress"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <ImageButton
-                            android:id="@+id/imageButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.166"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.661" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.148"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.664"
-                            app:srcCompat="@drawable/baseline_health_and_safety_24" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <Button
-                        android:id="@+id/button5"
-                        android:layout_width="340dp"
-                        android:layout_height="wrap_content"
-                        android:text="Find my Buddy a friend..."
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/lll"
-                        app:layout_constraintVertical_bias="0.194" />
-
-                    <View
-                        android:id="@+id/viewfg"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_margin="10dp"
-                        android:background="#E8E3CD"
-                        app:flow_verticalAlign="bottom"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintTop_toBottomOf="@id/button5"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image"
-                        android:layout_width="178dp"
-                        android:layout_height="154dp"
-                        android:src="@drawable/goden"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.497"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
-                        app:layout_constraintVertical_bias="0.176" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="285dp"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/white_background"
+                android:elevation="7dp"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" >
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="Buddy's Name"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="20dp"
+                        android:textColorHint="#8B7E7E"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/type"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="My Buddy is a..."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameInputLayout">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/auto_complete_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@id/ageLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/type"
+                    app:layout_constraintVertical_bias="0.5">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:padding="15dp"
+                        android:paddingBottom="20dp"
+                        android:text="Male"
+                        android:textSize="25sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:padding="15dp"
+                        android:paddingBottom="20dp"
+                        android:text="Female"
+                        android:textSize="25sp" />
+                </RadioGroup>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ageLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/type"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="4"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="Buddy's age"
+                        android:inputType="number"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/breedLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ageLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/breed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="Buddy's breed"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ownerNameLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/breedLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ownerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="My name is...."
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/petHealthLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/rounded_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ownerNameLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/healthimg"
+                        android:backgroundTint="#00FFFFFF"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/petHealth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="10dp"
+                        android:gravity="start"
+
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="Health of buddy"
+                        android:inputType="number"
+                        android:textColorHint="#8B7E7E"
+                        android:textSize="20sp"
+                        />
+
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/adoptionDaysLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/petHealthLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/adoptionDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="I can keep my Buddy for..."
+                        android:inputType="number"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/petAdressLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/adoptionDaysLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/petAdress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="My Buddy lives in..."
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/messageLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/petAdressLayout"
+                    app:layout_constraintVertical_bias="0.0" >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:lines="10"
+                        android:fontFamily="@font/alegreya_sans_medium"
+                        android:hint="Message for the new friend"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="20dp"
+                        android:textColorHint="#8B7E7E"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button5"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:text="Find my Buddy a friend..."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="@color/blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lll"
+                app:layout_constraintVertical_bias="0.194" />
+
+            <View
+                android:id="@+id/viewfg"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:background="#E8E3CD"
+                app:flow_verticalAlign="bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button5" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/goden"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+                app:layout_constraintVertical_bias="0.15" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
     </ScrollView>
 
 

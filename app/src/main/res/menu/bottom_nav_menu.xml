@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/adoptAPet"
-        android:title=""
+        android:title="Adopt a Pet"
         android:icon="@drawable/dognav"/>
     <item
         android:id="@+id/donateToShelters"
-        android:title=""
+        android:title="Shelters"
         android:icon="@drawable/heart"/>
     <item
         android:id="@+id/registerYourPet"
-        android:title=""
+        android:title="Register a Pet"
         android:icon="@drawable/register"/>
     <item
         android:id="@+id/contactVeterinary"
-        android:title=""
+        android:title="Contact Vet"
         android:icon="@drawable/stethoscope"/>
 </menu>

@@ -20,7 +20,7 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
 
     suspend fun getPet()
     {
-        Log.i("Data", "Function Called")
+        Log.i("Dataa", "Function Called")
 //        delay(5000)
         try {
             val response: Response<List<PetsDataClass>> = retrofit.petApiService.getPets()
@@ -74,7 +74,10 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
         }
         catch (e:Exception)
         {
-            Log.e("Error", e.toString())
+            Log.e("Dataa", e.toString())
+            throw e
         }
+
+        Log.d("Dataa", "Data loaded!")
     }
 }

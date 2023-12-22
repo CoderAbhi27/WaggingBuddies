@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +18,6 @@ import com.example.waggingbuddies.databinding.FragmentAdoptAPetBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -61,9 +61,29 @@ class AdoptAPetFragment : Fragment() {
 
 
         GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getPet()
-            getPets()
+            try{
+                viewModel.getPet()
+                Log.d("Dataa", "data came")
+//            getPets()
+                when (binding.petType.text.toString()) {
+                    "All" -> getPets()
+                    "Dogs" -> getDogs()
+                    "Cats" -> getCat()
+                    "Cows" -> getCow()
+                    "Birds" -> getBird()
+                }
 //            binding.loadingCardAllevents.visibility = View.GONE
+            } catch (e:Exception) {
+                Log.e("Dataa", "error - $e")
+                this.launch(Dispatchers.Main){
+                    Toast.makeText(
+                        requireContext(),
+                        "Please check your internet connection!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
         }
 
 

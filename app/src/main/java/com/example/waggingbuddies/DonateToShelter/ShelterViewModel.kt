@@ -36,6 +36,7 @@ class ShelterViewModel(application: Application): AndroidViewModel(application) 
         catch (e:Exception)
         {
             Log.e("Error", e.toString())
+            throw e
         }
     }
 }

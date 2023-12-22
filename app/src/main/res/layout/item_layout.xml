@@ -11,24 +11,20 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
         android:background="#E8E3CD">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:layout_marginTop="40dp"
-            android:background="#E8E3CD">
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/buttonregister"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="340dp"
-                android:layout_height="150dp"
-                android:background="@drawable/buttonregister"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -40,26 +36,26 @@
             android:layout_gravity="center"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="170dp"
             android:background="@drawable/rounded_edittext">
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:text="Doraemon"
+                android:gravity="center_horizontal"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.157" />
+                app:layout_constraintEnd_toStartOf="@+id/age"
+                app:layout_constraintStart_toEndOf="@+id/gender"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/age"
@@ -76,21 +72,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
-                android:id="@+id/male"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.076"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                app:srcCompat="@drawable/baseline_male_24" />
 
             <ImageView
-                android:id="@+id/female"
+                android:id="@+id/gender"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -107,12 +91,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cat"
+                android:gravity="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
+
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.085"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/gender"
+                app:layout_constraintStart_toStartOf="@+id/gender"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 

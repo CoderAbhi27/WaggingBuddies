@@ -123,7 +123,7 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
         }
 
-        binding.imageView.setOnClickListener {
+        binding.imageButton3.setOnClickListener {
             val builder : AlertDialog.Builder = AlertDialog.Builder(requireContext())
             val dialogView: View = LayoutInflater.from(
                 context).inflate(R.layout.health_dialogue, null)
@@ -145,36 +145,36 @@ class RegisterYourPetFragment : Fragment(R.layout.fragment_register_your_pet) {
 
         binding.button5.setOnClickListener {
 
-            if (binding.name.text.isEmpty())
+            if (binding.name.text.isNullOrEmpty())
                 Toast.makeText(requireContext(), "Enter Your Buddies Name", Toast.LENGTH_SHORT)
                     .show()
             else if (binding.autoCompleteTxt.text.isEmpty())
                 Toast.makeText(requireContext(), "Selet The type of Pet", Toast.LENGTH_SHORT)
                     .show()
-            else if (binding.age.text.isEmpty())
+            else if (binding.age.text.isNullOrEmpty())
                 Toast.makeText(requireContext(), "Enter Your Buddies Age", Toast.LENGTH_SHORT)
                     .show()
-            else if (binding.breed.text.isEmpty())
+            else if (binding.breed.text.isNullOrEmpty())
                 Toast.makeText(requireContext(), "Enter Your Pets Breed", Toast.LENGTH_SHORT)
                     .show()
-            else if (binding.ownerName.text.isEmpty())
+            else if (binding.ownerName.text.isNullOrEmpty())
                 Toast.makeText(requireContext(), "Enter Your Name", Toast.LENGTH_SHORT).show()
 //            else if (binding.petHealth.text.isEmpty())
 //                Toast.makeText(requireContext(), "Give a health diagnosis", Toast.LENGTH_SHORT)
 //                    .show()
-            else if (binding.adoptionDays.text.isEmpty())
+            else if (binding.adoptionDays.text.isNullOrEmpty())
                 Toast.makeText(
                     requireContext(),
                     "Enter the number of days you can keep yr pet for",
                     Toast.LENGTH_SHORT
                 ).show()
-            else if (binding.petAdress.text.isEmpty())
+            else if (binding.petAdress.text.isNullOrEmpty())
                 Toast.makeText(
                     requireContext(),
                     "Enter Your Buddies Address",
                     Toast.LENGTH_SHORT
                 ).show()
-            else if (binding.message.text.isEmpty())
+            else if (binding.message.text.isNullOrEmpty())
                 Toast.makeText(
                     requireContext(),
                     "Enter description of your Buddy",

@@ -43,8 +43,7 @@ class AdoptAPetAdapter(val context: Context): RecyclerView.Adapter<AdoptAPetAdap
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var petName: TextView =itemView.findViewById(R.id.name)
         var petImage: ImageView =itemView.findViewById(R.id.image)
-        var isMale: ImageView =itemView.findViewById(R.id.male)
-        var isFemale: ImageView =itemView.findViewById(R.id.female)
+        var gender: ImageView =itemView.findViewById(R.id.gender)
         var petType: TextView =itemView.findViewById(R.id.petType)
         var petAge: TextView =itemView.findViewById(R.id.age)
 
@@ -64,11 +63,9 @@ class AdoptAPetAdapter(val context: Context): RecyclerView.Adapter<AdoptAPetAdap
             holder.petType.text = pet.petType
             holder.petAge.text= "${pet.petAge} YEARS"
             if(pet.gender){
-                holder.isFemale.visibility = View.VISIBLE
-                holder.isMale.visibility = View.GONE
+                holder.gender.setImageResource(R.drawable.baseline_female_24)
             } else {
-                holder.isMale.visibility = View.VISIBLE
-                holder.isFemale.visibility = View.GONE
+                holder.gender.setImageResource(R.drawable.baseline_male_24)
             }
 
             if(pet.petImageURL!=null){

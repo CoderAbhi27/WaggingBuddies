@@ -15,10 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="360dp"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:layout_marginHorizontal="5dp"
         android:elevation="5dp"
         app:cardCornerRadius="25dp"
 
@@ -32,12 +34,10 @@
             android:layout_height="wrap_content"
             android:background=" #CDC8E8"
             app:circularflow_radiusInDP="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_gravity="bottom"
+            app:itemTextColor="@color/black"
+            android:theme="@style/Platform.MaterialComponents"
             app:menu="@menu/bottom_nav_menu" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
