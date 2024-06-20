@@ -47,7 +47,7 @@ Welcome to Wagging Buddies, a pet adoption platform dedicated to uniting homeles
 
 ## Additional Resources
 
-- [Project Proposal PDF]([https://drive.google.com/file/d/1n9dxfpPcvgxSdvWeG6a9IvNe/view?usp=sharing](https://drive.google.com/file/d/1URgJqP6FfgUxS8qte_PGNCQvHomlSzOG/view?usp=sharing))
+- ([Project Proposal PDF](https://drive.google.com/file/d/1URgJqP6FfgUxS8qte_PGNCQvHomlSzOG/view?usp=sharing))
 
 ## Contact Us
 
